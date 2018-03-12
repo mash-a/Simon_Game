@@ -59,14 +59,22 @@
 //     button.className = "lightUp"
 //   }
 // }
+function generateButton (arr) {
+  return arr[Math.floor(Math.random() * 5)];
+}
+function animateButton (elem) {
+  elem.toggle("lightUp");
+}
 
-document.addEventListener("DOMContentLoaded", function(){
-  let button = document.querySelector(".button1")
-  button.addEventListener("click", function(){
-    button.className = "lightUp";
+document.addEventListener("DOMContentLoaded", function() {
+    let pattern = [];
+    let copyOfPattern = [];
+    let myButtons = [];
+    let start = document.querySelector(".startButton");
+    let buttons = document.getElementsByClassName("button");
+  console.log(generateButton(buttons));
+  start.addEventListener("click", function() {
 
   })
-  setInterval(function(){
-    button.className = "button";
-  }, 5000);
+
 })
