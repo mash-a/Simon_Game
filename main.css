@@ -7,7 +7,9 @@ body{
   padding: 15px 32px;
   background-color: #e5f9ed;
   transition-duration: 0.4s;
-
+  }
+.startButton{
+  background-color:
 }
 .button:hover {
   background-color: #d0f4de;
