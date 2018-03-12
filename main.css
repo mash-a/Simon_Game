@@ -15,5 +15,7 @@ body{
   background-color: #d0f4de;
 }
 .lightUp {
-  background-color: #e7f0e9;
+  background-color: #d0f4de;
+  border-radius: 50%;
+  padding: 15px 32px;
 }

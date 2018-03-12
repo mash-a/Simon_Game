@@ -16,11 +16,11 @@
 //show user a button if the user matches the button with a click then the series is shown with an additional button
 //if wrong, game over
 //IIFE
-(function(){
-  let startGame = function () {
-
-  }
-})();
+// (function(){
+//   let startGame = function () {
+//
+//   }
+// })();
 
 
 // var buttons = ["button1", "button2", "button3", "button4", "button5"];
@@ -59,3 +59,14 @@
 //     button.className = "lightUp"
 //   }
 // }
+
+document.addEventListener("DOMContentLoaded", function(){
+  let button = document.querySelector(".button1")
+  button.addEventListener("click", function(){
+    button.className = "lightUp";
+
+  })
+  setInterval(function(){
+    button.className = "button";
+  }, 5000);
+})
