@@ -63,7 +63,7 @@ function generateButton (arr) {
   return arr[Math.floor(Math.random() * 5)];
 }
 function animateButton (elem) {
-  elem.toggle("lightUp");
+  elem.classList.toggle("lightUp");
 }
 
 document.addEventListener("DOMContentLoaded", function() {
@@ -74,7 +74,7 @@ document.addEventListener("DOMContentLoaded", function() {
     let buttons = document.getElementsByClassName("button");
   console.log(generateButton(buttons));
   start.addEventListener("click", function() {
-
+    animateButton(generateButton(buttons));
   })
 
 })
