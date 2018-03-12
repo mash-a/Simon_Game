@@ -1,7 +1,4 @@
 // present a random series of up to 20 button presses;
-function random (button) {
-  return Math.floor(Math.random(button) * 5);
-};
 //add an event listener to the start button that waits until the button is clicked
 //There is a function inside the event listener
 //this function starts the Simon_Game
@@ -24,3 +21,41 @@ function random (button) {
 
   }
 })();
+
+
+// var buttons = ["button1", "button2", "button3", "button4", "button5"];
+// let sequence = [];
+// let myButtons = [];
+// let currentButton = sequence[sequence.length -1];
+//
+// function giveRandomButton (arr) {
+//   return arr[Math.floor(Math.random() * 5)];
+// }
+//
+// function addButtonsToSequence (arr) {
+//   sequence.push(giveRandomButton(arr));
+//   return sequence;
+// }
+// addButtonsToSequence(buttons);
+//
+// function checkButton(myButton, sequenceButton){
+//   if(myButton === sequenceButton) {
+//     //display the whole sequence in addition to a new button and
+//     giveRandomButton(buttons);
+//   } else {
+//     gameOver();
+//   }
+// }
+// function checkSequenceLength (arr) {
+//   if(arr.length === 20) {
+//     gameOver();
+//     //display winning message and set the new high score
+//   }
+// }
+//
+// function gameOver(){}
+// function animate(){
+//   for (let i = 0; i < sequence.length; i++) {
+//     button.className = "lightUp"
+//   }
+// }
