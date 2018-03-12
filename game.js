@@ -16,9 +16,11 @@ function random (button) {
 //3. enable user interaction with the board and register and clicks on the buttons
 //4. while the player has not entered an incorrect response and the number of clicks is less than the length of the sequence, wait for player's input
 //5. continue adding input rounds until the player loses
-document.addEventListener("DOMContentLoaded", function (){
+//show user a button if the user matches the button with a click then the series is shown with an additional button
+//if wrong, game over
+//IIFE
+(function(){
+  let startGame = function () {
 
-
-
-  
-})
+  }
+})();
