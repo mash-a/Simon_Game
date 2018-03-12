@@ -1,3 +1,14 @@
+body{
+  display: flex;
+}
+
 .button {
   border-radius: 50%;
+  padding: 15px 32px;
+  background-color: #e5f9ed;
+  transition-duration: 0.4s;
+
+}
+.button:hover {
+  background-color: #d0f4de;
 }
