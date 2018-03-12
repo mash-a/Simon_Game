@@ -63,7 +63,7 @@ function generateButton (arr) {
   return arr[Math.floor(Math.random() * 5)];
 }
 function animateButton (elem) {
-  elem.classList.toggle("lightUp");
+  elem.className = "lightUp";
 }
 
 document.addEventListener("DOMContentLoaded", function() {
@@ -72,9 +72,20 @@ document.addEventListener("DOMContentLoaded", function() {
     let myButtons = [];
     let start = document.querySelector(".startButton");
     let buttons = document.getElementsByClassName("button");
+    let score = document.querySelector(".score").textContent;
   console.log(generateButton(buttons));
   start.addEventListener("click", function() {
+    let newButton;
     animateButton(generateButton(buttons));
+    newButton = animateButton(generateButton(buttons));
+
+    //wait for user to match the button
+    newButton.addEventListener("click", function {
+      //continue onwards
+      //if the button is pushed then it will be added to the pattern array and the score will be increased
+      pattern.push(newButton);
+      score++;
+    })
   })
 
 })
