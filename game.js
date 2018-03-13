@@ -56,55 +56,23 @@
 //     button.className = "lightUp"
 //   }
 // }
-function generateButton (arr) {
-  let randomButton = arr[Math.floor(Math.random() * 5)];
-  pattern.push(randomButton);
-}
-function animateButton (elem) {
-  if(elem.className === "lightUp"){
-    elem.class.toggle("button")
-  } else {
-    elem.class.toggle("lightUp")
-  };
-}
-function start () {
-  score.innerHTML = `Your score : ${++score}`;
 
-}
-function patternSequence(){
-  generateButton();
-  score.innerHTML = `Your score : ${++score}`;
-  let i = 0;
-
-}
-function myButtonsSequence(event){
-  myButtons.push(event.target);
-}
+//wait for user to match the button
+// newButton.addEventListener("click", function (){
+  //continue onwards
+  //if the button is pushed then it will be added to the pattern array and the score will be increased
+//   pattern.push(newButton);
+//   score++;
+// })
 //make a button listener which checks using the checksPattern function the pattern against myButtons
 //should also reset
-function checksPattern(simonArr, myArr){
-  for(let i = 0; i < myArr.length; i++){
-    if(simonArr.length === myArr.length){
-
-    }
-  }
-}
-function checkScore (myScore, high_score) {
-  high_score = localStorage.getItem("high_score");
-  if(high_score !== null) {
-    if(myScore >= high_score){
-      localStorage.setItem("high_score", score);
-
-    }
-  } else {
-    localStorage.setItem("high_score", score);
-  }
-}
 //loop through myButton array
 // make a display error function
 // make a function that resets the game
 
 //using setIntervals with clearIntervals
+
+
 
 
 document.addEventListener("DOMContentLoaded", function() {
@@ -125,17 +93,56 @@ document.addEventListener("DOMContentLoaded", function() {
   let newButton;
 
   console.log(pattern);
+  //button event listeners to compare buttons being pressed to the button
   buttonOne.addEventListener("click", myButtonsSequence);
   buttonTwo.addEventListener("click", myButtonsSequence);
   buttonThree.addEventListener("click", myButtonsSequence);
   buttonFour.addEventListener("click", myButtonsSequence);
   buttonFive.addEventListener("click", myButtonsSequence);
-  //wait for user to match the button
-  // newButton.addEventListener("click", function (){
-    //continue onwards
-    //if the button is pushed then it will be added to the pattern array and the score will be increased
-  //   pattern.push(newButton);
-  //   score++;
-  // })
+  function generateButton (buttons) {
+    let randomButton = buttons[Math.floor(Math.random() * 5)];
+    pattern.push(randomButton);
+  }
+  function animateButton (elem) {
+    if(elem.className === "lightUp"){
+      elem.class.toggle("button")
+    } else {
+      elem.class.toggle("lightUp")
+    };
+  }
+  function start () {
+    score.innerHTML = `Your score : ${++score}`;
+
+  }
+  function patternSequence(){
+    generateButton();
+    score.innerHTML = `Your score : ${++score}`;
+    let i = 0;
+
+  }
+  function myButtonsSequence(event){
+    myButtons.push(event.target);
+    checksPattern();
+  }
+
+  function checksPattern(simonArr, myArr){
+    for(let i = 0; i < myArr.length; i++){
+      if(simonArr.length === myArr.length){
+
+      }
+    }
+  }
+  function checkScore (myScore, high_score) {
+    high_score = localStorage.getItem("high_score");
+    if(high_score !== null) {
+      if(myScore >= high_score){
+        localStorage.setItem("high_score", score);
+
+      }
+    } else {
+      localStorage.setItem("high_score", score);
+    }
+  }
+
 
 })
