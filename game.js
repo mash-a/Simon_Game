@@ -73,6 +73,9 @@ function start () {
 }
 function patternSequence(){
   generateButton();
+  score.innerHTML = `Your score : ${++score}`;
+  let i = 0;
+
 }
 function myButtonsSequence(event){
   myButtons.push(event.target);
@@ -94,12 +97,13 @@ function checkScore (myScore, high_score) {
 
     }
   } else {
-    high_score = "000";
+    localStorage.setItem("high_score", score);
   }
 }
 //loop through myButton array
 // make a display error function
 // make a function that resets the game
+
 //using setIntervals with clearIntervals
 
 
@@ -107,6 +111,7 @@ document.addEventListener("DOMContentLoaded", function() {
     let pattern = [];
     //let copyOfPattern = [];
     let myButtons = [];
+    let simonButton;
     let start = document.querySelector(".startButton");
     let buttons = document.getElementsByClassName("button");
     let buttonOne = document.querySelector("#button1");
