@@ -60,7 +60,7 @@
 //   }
 // }
 function generateButton (arr) {
-  let randomButton = Math.floor(Math.random() * 5);
+  let randomButton = arr[Math.floor(Math.random() * 5)];
   pattern.push(randomButton);
 }
 function animateButton (elem) {
@@ -74,13 +74,15 @@ function start () {
   score.innerHTML ++;
 
 }
-function patternSequence(){}
+function patternSequence(){
+  generateButton();
+}
 function myButtonsSequence(){}
 //make a button listener which checks the pattern against myButtons
 //should also reset
 function checksPattern(arr1, arr2){
   for(let i = 0; i < arr2.length; i++){
-    
+
   }
 } //loop through myButton array
 // make a display error function
