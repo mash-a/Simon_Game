@@ -113,6 +113,7 @@ document.addEventListener("DOMContentLoaded", function() {
       }
     }
   }
+  //checking the score and storing it away into local storage
   function checkScore (myScore, high_score) {
     high_score = localStorage.getItem("high_score");
     if(high_score !== null) {
@@ -124,6 +125,8 @@ document.addEventListener("DOMContentLoaded", function() {
       localStorage.setItem("high_score", score);
     }
   }
+
+  //disbles the game board
   function disableBoard () {
     buttonOne.disabled = true;
     buttonTwo.disabled = true;
