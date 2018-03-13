@@ -60,7 +60,8 @@
 //   }
 // }
 function generateButton (arr) {
-  return arr[Math.floor(Math.random() * 5)];
+  let randomButton = Math.floor(Math.random() * 5);
+  pattern.push(randomButton);
 }
 function animateButton (elem) {
   if(elem.className === "lightUp"){
@@ -69,6 +70,11 @@ function animateButton (elem) {
     elem.class.toggle("lightUp")
   };
 }
+function start () {
+  score.innerHTML = 0;
+  score.innerHTML ++;
+
+}
 
 document.addEventListener("DOMContentLoaded", function() {
     let pattern = [];
@@ -76,20 +82,10 @@ document.addEventListener("DOMContentLoaded", function() {
     let myButtons = [];
     let start = document.querySelector(".startButton");
     let buttons = document.getElementsByClassName("button");
-    let score = document.querySelector(".score").innerHTML;
+    let score = document.querySelector(".score");
   console.log(generateButton(buttons));
   let newButton;
 
-  start.addEventListener("click", function() {
-
-    newButton = generateButton(buttons);
-    animateButton(newButton);
-
-
-
-
-
-  })
   console.log(pattern);
 
   //wait for user to match the button
