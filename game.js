@@ -93,8 +93,31 @@ document.addEventListener("DOMContentLoaded", function() {
           buttonThree.classList.add(tuscanyLightUp);
           break;
         case button === buttonFour:
-          buttonFour.classList.add()
+          buttonFour.classList.add(trolleyLightUp);
+          break;
+        case button === buttonFive:
+          buttonFive.classList.add(davysLightUp);
+          break;
       }
+      let lightOff = setTimeout (function (){
+        switch(button) {
+          case button === buttonOne:
+            buttonOne.classList.remove(melonLightUp);
+            break;
+          case button === buttonTwo:
+            buttonTwo.classList.remove(champagneLightUp);
+            break;
+          case button === buttonThree:
+            buttonThree.classList.remove(tuscanyLightUp);
+            break;
+          case button === buttonFour:
+            buttonFour.classList.remove(trolleyLightUp);
+            break;
+          case button === buttonFive:
+            buttonFive.classList.remove(davysLightUp);
+            break;
+        }
+      }, 500)
 
 
 }

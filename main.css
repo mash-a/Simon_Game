@@ -9,6 +9,7 @@ body{
   }
 .startButton{
   background-color: #fff4e9;
+  border-radius: 25%
 }
 .button:hover {
   background-color: #d0f4de;
@@ -21,39 +22,54 @@ body{
 .melon {
   background-color: #f7b4b4;
 }
-.melon:hover{}
+.melon:hover{
+  background-color: #f9c8c8;
+}
 .melonLightUp{
+  background-color: #f9c8c8;
   border-radius: 50%;
   padding: 15px 32px;
 }
 .champagne {
   background-color: #f7d2d2;
 }
-.champagne:hover{}
+.champagne:hover{
+  background-color: #f9dede;
+}
 .champagneLightUp{
+  background-color: #f9dede;
   border-radius: 50%;
   padding: 15px 32px;
 }
 .tuscany {
   background-color: #c99f9f;
 }
-.tuscany:hover{}
+.tuscany:hover{
+  background-color: #d7b9b9;
+}
 .tuscanyLightUp{
+  background-color: #d7b9b9;
   border-radius: 50%;
   padding: 15px 32px;}
 .trolley {
   background-color: #8d6b94;
 }
-.trolley:hover{}
+.trolley:hover{
+  background-color: #ac93b1
+}
 .trolleyLightUp{
+  background-color: #ac93b1;
   border-radius: 50%;
   padding: 15px 32px;
 }
 .davys {
   background-color: #e8dbc5;
 }
-.davys:hover{}
+.davys:hover{
+  background-color: #eee4d4
+}
 .davysLightUp{
+  background-color: #eee4d4;
   border-radius: 50%;
   padding: 15px 32px;
 }
@@ -61,4 +77,3 @@ body{
   color: #fff4e9;
 }
 //need to create both a normal color class and a lightUp class for each button
-  
