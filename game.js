@@ -45,11 +45,11 @@ let myButtons = [];
 let simonButton;
 let start = document.querySelector(".startButton");
 let buttons = document.getElementsByClassName("button");
-let buttonOne = document.querySelector("#button1");
-let buttonTwo = document.querySelector("#button2");
-let buttonThree = document.querySelector("#button3");
-let buttonFour = document.querySelector("#button4");
-let buttonFive = document.querySelector("#button5");
+let buttonOne = document.querySelector(".melon");
+let buttonTwo = document.querySelector(".champagne");
+let buttonThree = document.querySelector(".tuscany");
+let buttonFour = document.querySelector(".trolley");
+let buttonFive = document.querySelector(".davys");
 let score = document.querySelector(".score");
 let highScore;
 let gameScore = 0;
@@ -72,54 +72,57 @@ document.addEventListener("DOMContentLoaded", function() {
 
     start.addEventListener("click", function() {
         score.innerHTML = `Your score : ${++gameScore}`;
-        console.log(patternSequence());
-        animateButton(pattern[0])
+        patternSequence();
+        animateButton(pattern[0]);
 
     })
 
 
     function generateButton() {
-        let randomButton = buttons[Math.floor(Math.random() * 5)].id;
+        let randomButton = buttons[Math.floor(Math.random() * 5)];
         pattern.push(randomButton);
     }
     //lights up the buttons when they are either pushed or not pushed
     function animateButton(button) {
-      switch(button) {
-        case button === button1:
-          buttonOne.classList.add(melonLightUp);
-          break;
-        case button === button2:
-          buttonTwo.classList.add(champagneLightUp);
-          break;
-        case button === button3:
-          buttonThree.classList.add(tuscanyLightUp);
-          break;
-        case button === button4:
-          buttonFour.classList.add(trolleyLightUp);
-          break;
-        case button === button5:
-          buttonFive.classList.add(davysLightUp);
-          break;
-      }
-      let lightOff = setTimeout (function (){
-        switch(button) {
-          case button === buttonOne:
-            buttonOne.classList.remove(melonLightUp);
-            break;
-          case button === buttonTwo:
-            buttonTwo.classList.remove(champagneLightUp);
-            break;
-          case button === buttonThree:
-            buttonThree.classList.remove(tuscanyLightUp);
-            break;
-          case button === buttonFour:
-            buttonFour.classList.remove(trolleyLightUp);
-            break;
-          case button === buttonFive:
-            buttonFive.classList.remove(davysLightUp);
-            break;
-        }
-      }, 500)
+      let buttonClass = button.classList[1]
+      console.log(buttonClass);
+      
+      // switch(button) {
+      //   case button === "button melon":
+      //     buttonOne.classList.add("melonLightUp");
+      //     break;
+      //   case button === "button champagne":
+      //     buttonTwo.classList.add("champagneLightUp");
+      //     break;
+      //   case button === "button tuscany":
+      //     buttonThree.classList.add("tuscanyLightUp");
+      //     break;
+      //   case button === "button trolley":
+      //     buttonFour.classList.add("trolleyLightUp");
+      //     break;
+      //   case button === "button davys":
+      //     buttonFive.classList.add("davysLightUp");
+      //     break;
+      // }
+      // let lightOff = setTimeout (function (){
+      //   switch(button) {
+      //     case button === "button1":
+      //       buttonOne.classList.remove("melonLightUp");
+      //       break;
+      //     case button === "button2":
+      //       buttonTwo.classList.remove("champagneLightUp");
+      //       break;
+      //     case button === "button3":
+      //       buttonThree.classList.remove("tuscanyLightUp");
+      //       break;
+      //     case button === "button4":
+      //       buttonFour.classList.remove("trolleyLightUp");
+      //       break;
+      //     case button === "button5":
+      //       buttonFive.classList.remove("davysLightUp");
+      //       break;
+      //   }
+      // }, 500)
 
 
 }
@@ -132,6 +135,7 @@ document.addEventListener("DOMContentLoaded", function() {
     //push the buttons that i have pressed into the array holding my presses
     function myButtonsSequence(event) {
         myButtons.push(event.target);
+        //animateButton(event.target)
         console.log(myButtons)
         //checksPattern();
     }
