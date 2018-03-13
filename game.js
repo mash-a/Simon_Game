@@ -26,8 +26,8 @@
 
 //wait for user to match the button
 // newButton.addEventListener("click", function (){
-  //continue onwards
-  //if the button is pushed then it will be added to the pattern array and the score will be increased
+//continue onwards
+//if the button is pushed then it will be added to the pattern array and the score will be increased
 //   pattern.push(newButton);
 //   score++;
 // })
@@ -60,77 +60,87 @@ buttonThree.disabled = false;
 buttonFour.disabled = false;
 buttonFive.disabled = false;
 
+
 document.addEventListener("DOMContentLoaded", function() {
 
+    //button event listeners to compare buttons being pressed to the button
+    buttonOne.addEventListener("click", myButtonsSequence);
+    buttonTwo.addEventListener("click", myButtonsSequence);
+    buttonThree.addEventListener("click", myButtonsSequence);
+    buttonFour.addEventListener("click", myButtonsSequence);
+    buttonFive.addEventListener("click", myButtonsSequence);
 
-
-    start.addEventListener("click", function () {
-      score.innerHTML = `Your score : ${++gameScore}`;
-      patternSequence();
+    start.addEventListener("click", function() {
+        score.innerHTML = `Your score : ${++gameScore}`;
+        patternSequence();
     })
 
-  //button event listeners to compare buttons being pressed to the button
-  buttonOne.addEventListener("click", myButtonsSequence);
-  buttonTwo.addEventListener("click", myButtonsSequence);
-  buttonThree.addEventListener("click", myButtonsSequence);
-  buttonFour.addEventListener("click", myButtonsSequence);
-  buttonFive.addEventListener("click", myButtonsSequence);
-  function generateButton () {
-    let randomButton = buttons[Math.floor(Math.random() * 5)];
-    pattern.push(randomButton);
-  }
-  //lights up the buttons when they are either pushed or not pushed
-  function animateButton (elem) {
-    if(elem.className === "lightUp"){
-      elem.class.toggle("button")
-    } else {
-      elem.class.toggle("lightUp")
-    };
-  }
 
-  //the sequence that will start off the game
-  function patternSequence(){
-    generateButton();
-    console.log(pattern);
-    let i = 0;
-  }
-  //push the buttons that i have pressed into the array holding my presses
-  function myButtonsSequence(event){
-    myButtons.push(event.target);
-    console.log(myButtons)
-    //checksPattern();
-  }
-
-  //check my pattern against the random simon pattern
-  function checksPattern(simonArr, myArr){
-    for(let i = 0; i < myArr.length; i++){
-      if(simonArr.length === myArr.length){
-
-      }
+    function generateButton() {
+        let randomButton = buttons[Math.floor(Math.random() * 5)];
+        pattern.push(randomButton);
     }
-  }
-  //checking the score and storing it away into local storage
-  function checkScore (myScore, high_score) {
-    high_score = localStorage.getItem("high_score");
-    if(high_score !== null) {
-      if(myScore >= high_score){
-        localStorage.setItem("high_score", score);
-
+    //lights up the buttons when they are either pushed or not pushed
+    function animateButton() {
+      switch(button) {
+        case button === buttonOne:
+          buttonOne.classList.add(melonLightUp);
+          break;
+        case button === buttonTwo:
+          buttonTwo.classList.add(champagneLightUp);
+          break;
+        case button === buttonThree:
+          buttonThree.classList.add(tuscanyLightUp);
+          break;
+        case button === buttonFour:
+          buttonFour.classList.add()
       }
-    } else {
-      localStorage.setItem("high_score", score);
-    }
-  }
 
-  //disbles the game board
-  function disableBoard () {
-    buttonOne.disabled = true;
-    buttonTwo.disabled = true;
-    buttonThree.disabled = true;
-    buttonFour.disabled = true;
-    buttonFive.disabled = true;
-    start.disabled = true;
-  }
+
+}
+    //the sequence that will start off the game
+    function patternSequence() {
+        generateButton();
+        console.log(pattern);
+        let i = 0;
+    }
+    //push the buttons that i have pressed into the array holding my presses
+    function myButtonsSequence(event) {
+        myButtons.push(event.target);
+        console.log(myButtons)
+        //checksPattern();
+    }
+
+    //check my pattern against the random simon pattern
+    function checksPattern(simonArr, myArr) {
+        for (let i = 0; i < myArr.length; i++) {
+            if (simonArr.length === myArr.length) {
+
+            }
+        }
+    }
+    //checking the score and storing it away into local storage
+    function checkScore(myScore, high_score) {
+        high_score = localStorage.getItem("high_score");
+        if (high_score !== null) {
+            if (myScore >= high_score) {
+                localStorage.setItem("high_score", high_score);
+
+            }
+        } else {
+            localStorage.setItem("high_score", high_score);
+        }
+    }
+
+    //disables the game board
+    function disableBoard() {
+        buttonOne.disabled = true;
+        buttonTwo.disabled = true;
+        buttonThree.disabled = true;
+        buttonFour.disabled = true;
+        buttonFive.disabled = true;
+        start.disabled = true;
+    }
 
 
 

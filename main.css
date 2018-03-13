@@ -21,19 +21,44 @@ body{
 .melon {
   background-color: #f7b4b4;
 }
+.melon:hover{}
+.melonLightUp{
+  border-radius: 50%;
+  padding: 15px 32px;
+}
 .champagne {
   background-color: #f7d2d2;
+}
+.champagne:hover{}
+.champagneLightUp{
+  border-radius: 50%;
+  padding: 15px 32px;
 }
 .tuscany {
   background-color: #c99f9f;
 }
+.tuscany:hover{}
+.tuscanyLightUp{
+  border-radius: 50%;
+  padding: 15px 32px;}
 .trolley {
   background-color: #8d6b94;
 }
+.trolley:hover{}
+.trolleyLightUp{
+  border-radius: 50%;
+  padding: 15px 32px;
+}
 .davys {
   background-color: #e8dbc5;
+}
+.davys:hover{}
+.davysLightUp{
+  border-radius: 50%;
+  padding: 15px 32px;
 }
 .score, .highScore {
   color: #fff4e9;
 }
 //need to create both a normal color class and a lightUp class for each button
+  
