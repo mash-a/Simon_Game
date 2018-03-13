@@ -71,18 +71,29 @@ function animateButton (elem) {
   };
 }
 function start () {
-  score.innerHTML = 0;
   score.innerHTML ++;
 
 }
+function patternSequence(){}
+function myButtonsSequence(){}
+//make a button listener which checks the pattern against myButtons
+//should also reset
+function checksPattern(arr1, arr2){
+  for(let i = 0; i < arr2.length; i++){
+    
+  }
+} //loop through myButton array
+// make a display error function
+// make a function that resets the game
 
 document.addEventListener("DOMContentLoaded", function() {
     let pattern = [];
-    let copyOfPattern = [];
+    //let copyOfPattern = [];
     let myButtons = [];
     let start = document.querySelector(".startButton");
     let buttons = document.getElementsByClassName("button");
     let score = document.querySelector(".score");
+    let highScore = 0;
   console.log(generateButton(buttons));
   let newButton;
 
