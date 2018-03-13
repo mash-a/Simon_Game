@@ -28,10 +28,7 @@
 // let myButtons = [];
 // let currentButton = sequence[sequence.length -1];
 //
-// function giveRandomButton (arr) {
-//   return arr[Math.floor(Math.random() * 5)];
-// }
-//
+
 // function addButtonsToSequence (arr) {
 //   sequence.push(giveRandomButton(arr));
 //   return sequence;
@@ -78,11 +75,13 @@ function patternSequence(){
   generateButton();
 }
 function myButtonsSequence(){}
-//make a button listener which checks the pattern against myButtons
+//make a button listener which checks using the checksPattern function the pattern against myButtons
 //should also reset
-function checksPattern(arr1, arr2){
-  for(let i = 0; i < arr2.length; i++){
+function checksPattern(simonArr, myArr){
+  for(let i = 0; i < myArr.length; i++){
+    if(simonArr.length === myArr.length){
 
+    }
   }
 } //loop through myButton array
 // make a display error function
@@ -94,13 +93,22 @@ document.addEventListener("DOMContentLoaded", function() {
     let myButtons = [];
     let start = document.querySelector(".startButton");
     let buttons = document.getElementsByClassName("button");
+    let buttonOne = document.querySelector("#button1");
+    let buttonTwo = document.querySelector("#button2");
+    let buttonThree = document.querySelector("#button3");
+    let buttonFour = document.querySelector("#button4");
+    let buttonFive = document.querySelector("#button5");
     let score = document.querySelector(".score");
     let highScore = 0;
   console.log(generateButton(buttons));
   let newButton;
 
   console.log(pattern);
-
+  buttonOne.addEventListener();
+  buttonTwo.addEventListener();
+  buttonThree.addEventListener();
+  buttonFour.addEventListener();
+  buttonFive.addEventListener();
   //wait for user to match the button
   // newButton.addEventListener("click", function (){
   //   //continue onwards
