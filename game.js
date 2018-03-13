@@ -74,7 +74,9 @@ function start () {
 function patternSequence(){
   generateButton();
 }
-function myButtonsSequence(){}
+function myButtonsSequence(event){
+  myButtons.push(event.target);
+}
 //make a button listener which checks using the checksPattern function the pattern against myButtons
 //should also reset
 function checksPattern(simonArr, myArr){
@@ -100,6 +102,7 @@ function checkScore (myScore, high_score) {
 // make a function that resets the game
 //using setIntervals with clearIntervals
 
+
 document.addEventListener("DOMContentLoaded", function() {
     let pattern = [];
     //let copyOfPattern = [];
@@ -117,15 +120,15 @@ document.addEventListener("DOMContentLoaded", function() {
   let newButton;
 
   console.log(pattern);
-  buttonOne.addEventListener();
-  buttonTwo.addEventListener();
-  buttonThree.addEventListener();
-  buttonFour.addEventListener();
-  buttonFive.addEventListener();
+  buttonOne.addEventListener("click", myButtonsSequence);
+  buttonTwo.addEventListener("click", myButtonsSequence);
+  buttonThree.addEventListener("click", myButtonsSequence);
+  buttonFour.addEventListener("click", myButtonsSequence);
+  buttonFive.addEventListener("click", myButtonsSequence);
   //wait for user to match the button
   // newButton.addEventListener("click", function (){
-  //   //continue onwards
-  //   //if the button is pushed then it will be added to the pattern array and the score will be increased
+    //continue onwards
+    //if the button is pushed then it will be added to the pattern array and the score will be increased
   //   pattern.push(newButton);
   //   score++;
   // })
