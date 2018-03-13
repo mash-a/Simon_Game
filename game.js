@@ -23,39 +23,6 @@
 // })();
 
 
-// var buttons = ["button1", "button2", "button3", "button4", "button5"];
-// let sequence = [];
-// let myButtons = [];
-// let currentButton = sequence[sequence.length -1];
-//
-
-// function addButtonsToSequence (arr) {
-//   sequence.push(giveRandomButton(arr));
-//   return sequence;
-// }
-// addButtonsToSequence(buttons);
-//
-// function checkButton(myButton, sequenceButton){
-//   if(myButton === sequenceButton) {
-//     //display the whole sequence in addition to a new button and
-//     giveRandomButton(buttons);
-//   } else {
-//     gameOver();
-//   }
-// }
-// function checkSequenceLength (arr) {
-//   if(arr.length === 20) {
-//     gameOver();
-//     //display winning message and set the new high score
-//   }
-// }
-//
-// function gameOver(){}
-// function animate(){
-//   for (let i = 0; i < sequence.length; i++) {
-//     button.className = "lightUp"
-//   }
-// }
 
 //wait for user to match the button
 // newButton.addEventListener("click", function (){
@@ -71,38 +38,51 @@
 // make a function that resets the game
 
 //using setIntervals with clearIntervals
-
-
-
+//create a disable board function
+//Variables
+let pattern = [];
+//let copyOfPattern = [];
+let myButtons = [];
+let simonButton;
+let start = document.querySelector(".startButton");
+let buttons = document.getElementsByClassName("button");
+let buttonOne = document.querySelector("#button1");
+let buttonTwo = document.querySelector("#button2");
+let buttonThree = document.querySelector("#button3");
+let buttonFour = document.querySelector("#button4");
+let buttonFive = document.querySelector("#button5");
+let score = document.querySelector(".score");
+let highScore;
+let gameScore = 0;
+start.disabled = false;
+buttonOne.disabled = false;
+buttonTwo.disabled = false;
+buttonThree.disabled = false;
+buttonFour.disabled = false;
+buttonFive.disabled = false;
 
 document.addEventListener("DOMContentLoaded", function() {
-    let pattern = [];
-    //let copyOfPattern = [];
-    let myButtons = [];
-    let simonButton;
-    let start = document.querySelector(".startButton");
-    let buttons = document.getElementsByClassName("button");
-    let buttonOne = document.querySelector("#button1");
-    let buttonTwo = document.querySelector("#button2");
-    let buttonThree = document.querySelector("#button3");
-    let buttonFour = document.querySelector("#button4");
-    let buttonFive = document.querySelector("#button5");
-    let score = document.querySelector(".score");
-    let highScore = 0;
-  console.log(generateButton(buttons));
-  let newButton;
 
-  console.log(pattern);
+
+
+    start.addEventListener("click", function () {
+      score.innerHTML = `Your score : ${++gameScore}`;
+      patternSequence();
+    })
+
   //button event listeners to compare buttons being pressed to the button
-  buttonOne.addEventListener("click", myButtonsSequence);
+  buttonOne.addEventListener("click", function (){
+    console.log("i am button one!")
+  });
   buttonTwo.addEventListener("click", myButtonsSequence);
   buttonThree.addEventListener("click", myButtonsSequence);
   buttonFour.addEventListener("click", myButtonsSequence);
   buttonFive.addEventListener("click", myButtonsSequence);
-  function generateButton (buttons) {
+  function generateButton () {
     let randomButton = buttons[Math.floor(Math.random() * 5)];
     pattern.push(randomButton);
   }
+  //lights up the buttons when they are either pushed or not pushed
   function animateButton (elem) {
     if(elem.className === "lightUp"){
       elem.class.toggle("button")
@@ -110,21 +90,22 @@ document.addEventListener("DOMContentLoaded", function() {
       elem.class.toggle("lightUp")
     };
   }
-  function start () {
-    score.innerHTML = `Your score : ${++score}`;
-
-  }
+  // function start () {
+  //   score.innerHTML = `Your score : ${++score}`;
+  //
+  // }
+  //the sequence that will start off the game
   function patternSequence(){
     generateButton();
-    score.innerHTML = `Your score : ${++score}`;
+    console.log(pattern);
     let i = 0;
-
   }
+  //push the buttons that i have pressed into the array holding my presses
   function myButtonsSequence(event){
     myButtons.push(event.target);
     checksPattern();
   }
-
+  //check my pattern against the random simonn pattern
   function checksPattern(simonArr, myArr){
     for(let i = 0; i < myArr.length; i++){
       if(simonArr.length === myArr.length){
@@ -143,6 +124,14 @@ document.addEventListener("DOMContentLoaded", function() {
       localStorage.setItem("high_score", score);
     }
   }
+  function disableBoard () {
+    buttonOne.disabled = true;
+    buttonTwo.disabled = true;
+    buttonThree.disabled = true;
+    buttonFour.disabled = true;
+    buttonFive.disabled = true;
+  }
+
 
 
 })

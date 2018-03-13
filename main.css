@@ -1,15 +1,14 @@
 body{
-  background-color: #f4ecd6 !important;
+  background-color: #1c1d21 !important;
 }
 
 .button {
   border-radius: 50%;
   padding: 15px 32px;
-  background-color: #e5f9ed;
   transition-duration: 0.4s;
   }
 .startButton{
-  background-color:
+  background-color: #fff4e9;
 }
 .button:hover {
   background-color: #d0f4de;
@@ -19,4 +18,22 @@ body{
   border-radius: 50%;
   padding: 15px 32px;
 }
-//need to create both a normal color class and a lightUp class for each button 
+.melon {
+  background-color: #f7b4b4;
+}
+.champagne {
+  background-color: #f7d2d2;
+}
+.tuscany {
+  background-color: #c99f9f;
+}
+.trolley {
+  background-color: #8d6b94;
+}
+.davys {
+  background-color: #e8dbc5;
+}
+.score, .highScore {
+  color: #fff4e9;
+}
+//need to create both a normal color class and a lightUp class for each button
