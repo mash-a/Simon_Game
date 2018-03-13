@@ -41,7 +41,6 @@
 //create a disable board function
 //Variables
 let pattern = [];
-//let copyOfPattern = [];
 let myButtons = [];
 let simonButton;
 let start = document.querySelector(".startButton");
@@ -71,9 +70,7 @@ document.addEventListener("DOMContentLoaded", function() {
     })
 
   //button event listeners to compare buttons being pressed to the button
-  buttonOne.addEventListener("click", function (){
-    console.log("i am button one!")
-  });
+  buttonOne.addEventListener("click", myButtonsSequence);
   buttonTwo.addEventListener("click", myButtonsSequence);
   buttonThree.addEventListener("click", myButtonsSequence);
   buttonFour.addEventListener("click", myButtonsSequence);
@@ -90,10 +87,7 @@ document.addEventListener("DOMContentLoaded", function() {
       elem.class.toggle("lightUp")
     };
   }
-  // function start () {
-  //   score.innerHTML = `Your score : ${++score}`;
-  //
-  // }
+
   //the sequence that will start off the game
   function patternSequence(){
     generateButton();
@@ -103,9 +97,11 @@ document.addEventListener("DOMContentLoaded", function() {
   //push the buttons that i have pressed into the array holding my presses
   function myButtonsSequence(event){
     myButtons.push(event.target);
-    checksPattern();
+    console.log(myButtons)
+    //checksPattern();
   }
-  //check my pattern against the random simonn pattern
+
+  //check my pattern against the random simon pattern
   function checksPattern(simonArr, myArr){
     for(let i = 0; i < myArr.length; i++){
       if(simonArr.length === myArr.length){
@@ -133,6 +129,7 @@ document.addEventListener("DOMContentLoaded", function() {
     buttonThree.disabled = true;
     buttonFour.disabled = true;
     buttonFive.disabled = true;
+    start.disabled = true;
   }
 
 
