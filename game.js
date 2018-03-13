@@ -72,30 +72,32 @@ document.addEventListener("DOMContentLoaded", function() {
 
     start.addEventListener("click", function() {
         score.innerHTML = `Your score : ${++gameScore}`;
-        patternSequence();
+        console.log(patternSequence());
+        animateButton(pattern[0])
+
     })
 
 
     function generateButton() {
-        let randomButton = buttons[Math.floor(Math.random() * 5)];
+        let randomButton = buttons[Math.floor(Math.random() * 5)].id;
         pattern.push(randomButton);
     }
     //lights up the buttons when they are either pushed or not pushed
-    function animateButton() {
+    function animateButton(button) {
       switch(button) {
-        case button === buttonOne:
+        case button === button1:
           buttonOne.classList.add(melonLightUp);
           break;
-        case button === buttonTwo:
+        case button === button2:
           buttonTwo.classList.add(champagneLightUp);
           break;
-        case button === buttonThree:
+        case button === button3:
           buttonThree.classList.add(tuscanyLightUp);
           break;
-        case button === buttonFour:
+        case button === button4:
           buttonFour.classList.add(trolleyLightUp);
           break;
-        case button === buttonFive:
+        case button === button5:
           buttonFive.classList.add(davysLightUp);
           break;
       }
