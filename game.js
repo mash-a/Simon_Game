@@ -68,7 +68,7 @@ function animateButton (elem) {
   };
 }
 function start () {
-  score.innerHTML ++;
+  score.innerHTML = `Your score : ${++score}`;
 
 }
 function patternSequence(){
@@ -83,9 +83,22 @@ function checksPattern(simonArr, myArr){
 
     }
   }
-} //loop through myButton array
+}
+function checkScore (myScore, high_score) {
+  high_score = localStorage.getItem("high_score");
+  if(high_score !== null) {
+    if(myScore >= high_score){
+      localStorage.setItem("high_score", score);
+
+    }
+  } else {
+    high_score = "000";
+  }
+}
+//loop through myButton array
 // make a display error function
 // make a function that resets the game
+//using setIntervals with clearIntervals
 
 document.addEventListener("DOMContentLoaded", function() {
     let pattern = [];
