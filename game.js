@@ -74,7 +74,7 @@ document.addEventListener("DOMContentLoaded", function() {
         score.innerHTML = `Your score : ${++gameScore}`;
         patternSequence();
         animateButton(pattern[0]);
-
+        console.log(pattern[0])
     })
 
 
@@ -84,47 +84,32 @@ document.addEventListener("DOMContentLoaded", function() {
     }
     //lights up the buttons when they are either pushed or not pushed
     function animateButton(button) {
-      let buttonClass = button.classList[1]
-      console.log(buttonClass);
-      
-      // switch(button) {
-      //   case button === "button melon":
-      //     buttonOne.classList.add("melonLightUp");
-      //     break;
-      //   case button === "button champagne":
-      //     buttonTwo.classList.add("champagneLightUp");
-      //     break;
-      //   case button === "button tuscany":
-      //     buttonThree.classList.add("tuscanyLightUp");
-      //     break;
-      //   case button === "button trolley":
-      //     buttonFour.classList.add("trolleyLightUp");
-      //     break;
-      //   case button === "button davys":
-      //     buttonFive.classList.add("davysLightUp");
-      //     break;
-      // }
-      // let lightOff = setTimeout (function (){
-      //   switch(button) {
-      //     case button === "button1":
-      //       buttonOne.classList.remove("melonLightUp");
-      //       break;
-      //     case button === "button2":
-      //       buttonTwo.classList.remove("champagneLightUp");
-      //       break;
-      //     case button === "button3":
-      //       buttonThree.classList.remove("tuscanyLightUp");
-      //       break;
-      //     case button === "button4":
-      //       buttonFour.classList.remove("trolleyLightUp");
-      //       break;
-      //     case button === "button5":
-      //       buttonFive.classList.remove("davysLightUp");
-      //       break;
-      //   }
-      // }, 500)
-
-
+      let buttonClass = button.classList[1];
+      console.log(buttonClass)
+      if(buttonClass === "melon"){
+        buttonOne.classList.replace("melon", "melonLightUp");
+      } else if(buttonClass === "champagne"){
+        buttonTwo.classList.replace("champagne", "champagneLightUp");
+      } else if (buttonClass === "tuscany"){
+        buttonThree.classList.replace("tuscany", "tuscanyLightUp");
+      } else if (buttonClass === "trolley"){
+        buttonFour.classList.replace("trolley", "trolleyLightUp");
+      } else {
+        buttonFive.classList.replace("davys", "davysLightUp");
+      }
+      let lightOff = setTimeout (function (){
+          if(buttonClass === "melon"){
+            buttonOne.classList.replace("melonLightUp", "melon");
+          } else if (buttonClass === "champagne"){
+            buttonTwo.classList.replace("champagneLightUp", "champagne");
+          } else if (buttonClass === "tuscany"){
+            buttonThree.classList.replace("tuscanyLightUp", "tuscany");
+          } else if (buttonClass === "trolley") {
+            buttonFour.classList.replace("trolleyLightUp", "trolley");
+          }else {
+            buttonFive.classList.replace("davysLightUp", "davys");
+          }
+      }, 1000)
 }
     //the sequence that will start off the game
     function patternSequence() {
