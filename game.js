@@ -40,7 +40,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     function newSimon() {
         // reset();
-        disableBoard();
+        let disabled = setTimeout(disableBoard, 1000);
         addButtonToSequence();
         patternSequence();
     }
@@ -89,18 +89,21 @@ document.addEventListener("DOMContentLoaded", function() {
             if (pattern.length === myButtons.length) {
                 if (pattern[i] === myButtons[i]) {
                     if (pattern.length === 20) {
-                        .message.innerHTML = "Congrats! You Won!"
+                        simonMessage.innerHTML = "Congrats! You Won!"
                         high_score = 20;
                         checkScore(myScore, high_score);
                         newSimon();
                     } else {
-                        //next round of buttons 
+                        //next round of buttons
+                        generateButton();
+                        patternSequence();
                     }
                 }
             }
         }
     }
     //checking the score and storing it away into local storage
+    //need to fix this function
     function checkScore(myScore, high_score) {
         high_score = localStorage.getItem("high_score");
         if (high_score !== null) {
@@ -140,7 +143,7 @@ document.addEventListener("DOMContentLoaded", function() {
             } else {
                 buttonFive.classList.replace("greenLightUp", "green");
             }
-        }, 500)
+        }, 300)
     }
 
     //disables the game board
@@ -151,7 +154,7 @@ document.addEventListener("DOMContentLoaded", function() {
         buttonFour.disabled = true;
         buttonFive.disabled = true;
     }
-
+    //enable the board
     function enableBoard() {
         buttonOne.disabled = false;
         buttonTwo.disabled = false;
