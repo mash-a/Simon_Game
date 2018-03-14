@@ -1,26 +1,24 @@
-//Variables
-let pattern = [];
-let myButtons = [];
-let simonButton;
-let start = document.querySelector(".startButton");
-let buttons = document.getElementsByClassName("button");
-let buttonOne = document.querySelector(".melon");
-let buttonTwo = document.querySelector(".champagne");
-let buttonThree = document.querySelector(".tuscany");
-let buttonFour = document.querySelector(".trolley");
-let buttonFive = document.querySelector(".davys");
-let score = document.querySelector(".score");
-let highScore;
-let gameScore = 0;
-start.disabled = false;
-buttonOne.disabled = false;
-buttonTwo.disabled = false;
-buttonThree.disabled = false;
-buttonFour.disabled = false;
-buttonFive.disabled = false;
-
-
 document.addEventListener("DOMContentLoaded", function() {
+  //Variables
+  let pattern = [];
+  let myButtons = [];
+  let simonButton;
+  let start = document.querySelector(".startButton");
+  let buttons = document.getElementsByClassName("button");
+  let buttonOne = document.querySelector(".melon");
+  let buttonTwo = document.querySelector(".champagne");
+  let buttonThree = document.querySelector(".tuscany");
+  let buttonFour = document.querySelector(".trolley");
+  let buttonFive = document.querySelector(".davys");
+  let score = document.querySelector(".score");
+  let highScore;
+  let gameScore = 0;
+  start.disabled = false;
+  buttonOne.disabled = false;
+  buttonTwo.disabled = false;
+  buttonThree.disabled = false;
+  buttonFour.disabled = false;
+  buttonFive.disabled = false;
 
     //button event listeners to compare buttons being pressed to the button
     buttonOne.addEventListener("click", myButtonsSequence);
@@ -32,10 +30,12 @@ document.addEventListener("DOMContentLoaded", function() {
     start.addEventListener("click", function() {
         score.innerHTML = `Your score : ${++gameScore}`;
         patternSequence();
-        animateButton(pattern[0]);
         console.log(pattern[0])
     })
-
+    function newSimon () {
+      pattern = [];
+      myButtons = [];
+    }
 
     function generateButton() {
         let randomButton = buttons[Math.floor(Math.random() * 5)];
@@ -72,8 +72,9 @@ document.addEventListener("DOMContentLoaded", function() {
               if(pattern[i] === myButtons[i]) {
                 if(pattern.length === 20) {
                   alert("Awesome Game!");
-
-                  //newsimongame function
+                high_score = 20;
+                checkScore(myScore, high_score);
+                newSimon();
                 }
               }
             }
