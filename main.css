@@ -10,7 +10,8 @@ body{
   }
 .startButton{
   background-color: #fff4e9;
-  border-radius: 25%
+  border-radius: 25%;
+  font-size:  35px !important;
 }
 .melon {
   background-color: #f3a2b1;
@@ -74,5 +75,6 @@ body{
 }
 .gameScore, .highScore {
   color: #fff4e9;
+  font-size: 35px !important;
 }
 //need to create both a normal color class and a lightUp class for each button
