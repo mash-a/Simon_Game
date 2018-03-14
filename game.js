@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", function() {
   //Variables
   let pattern = [];
   let myButtons = [];
-  let simonButton;
+  let simonCount = 0;
   let start = document.querySelector(".startButton");
   let buttons = document.getElementsByClassName("button");
   let buttonOne = document.querySelector(".melon");
@@ -10,8 +10,9 @@ document.addEventListener("DOMContentLoaded", function() {
   let buttonThree = document.querySelector(".tuscany");
   let buttonFour = document.querySelector(".trolley");
   let buttonFive = document.querySelector(".davys");
-  let score = document.querySelector(".score");
-  let highScore;
+  let myScore = document.querySelector(".gameScore");
+  let high_score = document.querySelector(".highScore");
+  let highScore = 0;
   let gameScore = 0;
   start.disabled = false;
   buttonOne.disabled = false;
@@ -35,11 +36,15 @@ document.addEventListener("DOMContentLoaded", function() {
     function newSimon () {
       pattern = [];
       myButtons = [];
+      gameScore = 0;
     }
 
     function generateButton() {
         let randomButton = buttons[Math.floor(Math.random() * 5)];
         pattern.push(randomButton);
+    }
+    function addButtonToSequence(){
+
     }
 
     //the sequence that will start off the game
@@ -48,9 +53,11 @@ document.addEventListener("DOMContentLoaded", function() {
         // console.log(pattern);
         let i = 0;
         let sequence = setInterval(function() {
+          disableBoard();
           animateButton(pattern[i]);
           i++;
           if(i > pattern.length-1) {
+            enableBoard();
             clearInterval(sequence);
           }
         }, 500)
@@ -131,6 +138,14 @@ document.addEventListener("DOMContentLoaded", function() {
         buttonFour.disabled = true;
         buttonFive.disabled = true;
         start.disabled = true;
+    }
+    function enableBoard() {
+      buttonOne.disabled = false;
+      buttonTwo.disabled = false;
+      buttonThree.disabled = false;
+      buttonFour.disabled = false;
+      buttonFive.disabled = false;
+      start.disabled = false;
     }
 
 
