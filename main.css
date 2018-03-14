@@ -32,10 +32,10 @@ body{
   background-color: #faf9b5;
 }
 .yellow:hover{
-  background-color: #eae604;
+  background-color: #ccc802;
 }
 .yellowLightUp{
-  background-color: #eae604;
+  background-color: #ccc802;
   border-radius: 50%;
   height: 150px;
   width: 150px;
