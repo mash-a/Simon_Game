@@ -85,9 +85,17 @@ document.addEventListener("DOMContentLoaded", function() {
 
     //the sequence that will start off the game
     function patternSequence() {
-        generateButton();
-        console.log(pattern);
+        // generateButton();
+        // console.log(pattern);
         let i = 0;
+        let sequence = setInterval(function() {
+          animateButton(pattern[i]);
+          i++;
+          if(i > pattern.length-1) {
+            clearInterval(sequence);
+          }
+        }, 500)
+        myButtons = [];
     }
     //push the buttons that i have pressed into the array holding my presses
     function myButtonsSequence(event) {
