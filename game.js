@@ -29,7 +29,10 @@ document.addEventListener("DOMContentLoaded", function() {
     buttonFive.addEventListener("click", myButtonsSequence);
 
     start.addEventListener("click", function() {
-        myScore.innerHTML = `Your score : ${gameScore}`;
+        myScore.innerHTML = `Your score : ${++gameScore}`;
+        newSimon();
+        disableBoard();
+        addButtonToSequence();
         patternSequence();
         console.log(pattern[0])
     })
@@ -46,6 +49,7 @@ document.addEventListener("DOMContentLoaded", function() {
     function addButtonToSequence(){
       gameScore++;
       generateButton();
+
     }
 
     //the sequence that will start off the game
@@ -54,11 +58,11 @@ document.addEventListener("DOMContentLoaded", function() {
         // console.log(pattern);
         let i = 0;
         let sequence = setInterval(function() {
-          disableBoard();
+
           animateButton(pattern[i]);
           i++;
           if(i > pattern.length-1) {
-            enableBoard();
+
             clearInterval(sequence);
           }
         }, 500)
