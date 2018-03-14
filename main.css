@@ -11,65 +11,57 @@ body{
   background-color: #fff4e9;
   border-radius: 25%
 }
-.button:hover {
-  background-color: #d0f4de;
-}
-.lightUp {
-  background-color: #d0f4de;
-  border-radius: 50%;
-  padding: 15px 32px;
-}
 .melon {
-  background-color: #ffe347;
+  background-color: #f3a2b1;
 }
 .melon:hover{
-  background-color: #f1d785;
+  background-color: #e0002b;
 }
 .melonLightUp{
-  background-color: #f1d785;
+  background-color: #e0002b;
   border-radius: 50%;
   padding: 15px 32px;
 }
 .champagne {
-  background-color: #ff446d;
+  background-color: #faf9b5;
 }
 .champagne:hover{
-  background-color: #f1859c;
+  background-color: #fffa00;
 }
 .champagneLightUp{
-  background-color: #f1859c;
+  background-color: #fffa00;
   border-radius: 50%;
   padding: 15px 32px;
 }
 .tuscany {
-  background-color: #ffa047;
+  background-color: #fcd5b1;
 }
 .tuscany:hover{
-  background-color: #f1b485;
+  background-color: #f97800;
 }
 .tuscanyLightUp{
-  background-color: #f1b485;
+  background-color: #f97800;
   border-radius: 50%;
   padding: 15px 32px;}
 .trolley {
-  background-color: #f23a52;
+  background-color: #a2d2e4;
 }
 .trolley:hover{
-  background-color: #ff7f90
+  background-color: #0085b5
 }
 .trolleyLightUp{
-  background-color: #ff7f90;
+  background-color: #0085b5;
   border-radius: 50%;
   padding: 15px 32px;
 }
 .davys {
-  background-color: #54d1f7;
+  background-color: #abffa2;
 }
 .davys:hover{
-  background-color: #97d3f2
+  background-color: #19ff00
 }
 .davysLightUp{
-  background-color: #97d3f2;
+  background-color: #19ff00;
   border-radius: 50%;
   padding: 15px 32px;
 }
