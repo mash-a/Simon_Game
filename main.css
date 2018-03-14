@@ -76,7 +76,7 @@ body{
   height: 150px;
   width: 150px;
 }
-.gameScore, .highScore {
+.gameScore, .highScore, .message {
   color: #fff4e9;
   font-size: 35px !important;
 }

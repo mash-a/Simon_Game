@@ -1,26 +1,26 @@
 document.addEventListener("DOMContentLoaded", function() {
-  //Variables
-  let pattern = [];
-  let myButtons = [];
-  // let simonCount = 0;
-  let resetButton = document.querySelector(".resetButton");
-  let start = document.querySelector(".startButton");
-  let buttons = document.getElementsByClassName("button");
-  let buttonOne = document.querySelector(".red");
-  let buttonTwo = document.querySelector(".yellow");
-  let buttonThree = document.querySelector(".orange");
-  let buttonFour = document.querySelector(".blue");
-  let buttonFive = document.querySelector(".green");
-  let myScore = document.querySelector(".gameScore");
-  let high_score = document.querySelector(".highScore");
-  let highScore = 0;
-  let gameScore = 0;
-  start.disabled = false;
-  buttonOne.disabled = false;
-  buttonTwo.disabled = false;
-  buttonThree.disabled = false;
-  buttonFour.disabled = false;
-  buttonFive.disabled = false;
+    //Variables
+    let pattern = [];
+    let myButtons = [];
+    let simonMessage = document.querySelector(".message");
+    let resetButton = document.querySelector(".resetButton");
+    let start = document.querySelector(".startButton");
+    let buttons = document.getElementsByClassName("button");
+    let buttonOne = document.querySelector(".red");
+    let buttonTwo = document.querySelector(".yellow");
+    let buttonThree = document.querySelector(".orange");
+    let buttonFour = document.querySelector(".blue");
+    let buttonFive = document.querySelector(".green");
+    let myScore = document.querySelector(".gameScore");
+    let high_score = document.querySelector(".highScore");
+    let highScore = 0;
+    let gameScore = 0;
+    start.disabled = false;
+    buttonOne.disabled = false;
+    buttonTwo.disabled = false;
+    buttonThree.disabled = false;
+    buttonFour.disabled = false;
+    buttonFive.disabled = false;
 
     //button event listeners to compare buttons being pressed to the button
     buttonOne.addEventListener("click", myButtonsSequence);
@@ -32,27 +32,29 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
     function reset() {
-      pattern = [];
-      myButtons = [];
-      gameScore = 0;
-      myScore.innerHTML = `Your score : ${gameScore}`;
-      }
-    function newSimon () {
-      // reset();
-      disableBoard();
-      addButtonToSequence();
-      patternSequence();
+        pattern = [];
+        myButtons = [];
+        gameScore = 0;
+        myScore.innerHTML = `Your score : ${gameScore}`;
+    }
+
+    function newSimon() {
+        // reset();
+        disableBoard();
+        addButtonToSequence();
+        patternSequence();
     }
 
     function generateButton() {
         let randomButton = buttons[Math.floor(Math.random() * 5)];
         pattern.push(randomButton);
     }
-    function addButtonToSequence(){
 
-      ++gameScore;
-      myScore.innerHTML = `Your score : ${gameScore}`;
-      generateButton();
+    function addButtonToSequence() {
+
+        ++gameScore;
+        myScore.innerHTML = `Your score : ${gameScore}`;
+        generateButton();
 
     }
 
@@ -63,12 +65,12 @@ document.addEventListener("DOMContentLoaded", function() {
         let i = 0;
         let sequence = setInterval(function() {
 
-          animateButton(pattern[i]);
-          i++;
-          if(i >= pattern.length) {
+            animateButton(pattern[i]);
+            i++;
+            if (i >= pattern.length) {
 
-           clearInterval(sequence);
-          }
+                clearInterval(sequence);
+            }
         }, 500)
 
     }
@@ -84,15 +86,17 @@ document.addEventListener("DOMContentLoaded", function() {
     //check my pattern against the random simon pattern
     function checksPattern(pattern, myButtons) {
         for (let i = 0; i < simonArr.length; i++) {
-            if(pattern.length === myButtons.length) {
-              if(pattern[i] === myButtons[i]) {
-                if(pattern.length === 20) {
-                  alert("Awesome Game!");
-                high_score = 20;
-                checkScore(myScore, high_score);
-                newSimon();
+            if (pattern.length === myButtons.length) {
+                if (pattern[i] === myButtons[i]) {
+                    if (pattern.length === 20) {
+                        .message.innerHTML = "Congrats! You Won!"
+                        high_score = 20;
+                        checkScore(myScore, high_score);
+                        newSimon();
+                    } else {
+                        //next round of buttons 
+                    }
                 }
-              }
             }
         }
     }
@@ -111,33 +115,33 @@ document.addEventListener("DOMContentLoaded", function() {
 
     //lights up the buttons when they are either pushed or not pushed
     function animateButton(button) {
-      let buttonClass = button.classList[1];
-      console.log(buttonClass)
-      if(buttonClass === "red"){
-        buttonOne.classList.replace("red", "redLightUp");
-      } else if(buttonClass === "yellow"){
-        buttonTwo.classList.replace("yellow", "yellowLightUp");
-      } else if (buttonClass === "orange"){
-        buttonThree.classList.replace("orange", "orangeLightUp");
-      } else if (buttonClass === "blue"){
-        buttonFour.classList.replace("blue", "blueLightUp");
-      } else {
-        buttonFive.classList.replace("green", "greenLightUp");
-      }
-      let lightOff = setTimeout (function (){
-          if(buttonClass === "red"){
-            buttonOne.classList.replace("redLightUp", "red");
-          } else if (buttonClass === "yellow"){
-            buttonTwo.classList.replace("yellowLightUp", "yellow");
-          } else if (buttonClass === "orange"){
-            buttonThree.classList.replace("orangeLightUp", "orange");
-          } else if (buttonClass === "blue") {
-            buttonFour.classList.replace("blueLightUp", "blue");
-          }else {
-            buttonFive.classList.replace("greenLightUp", "green");
-          }
-      }, 500)
-}
+        let buttonClass = button.classList[1];
+        console.log(buttonClass)
+        if (buttonClass === "red") {
+            buttonOne.classList.replace("red", "redLightUp");
+        } else if (buttonClass === "yellow") {
+            buttonTwo.classList.replace("yellow", "yellowLightUp");
+        } else if (buttonClass === "orange") {
+            buttonThree.classList.replace("orange", "orangeLightUp");
+        } else if (buttonClass === "blue") {
+            buttonFour.classList.replace("blue", "blueLightUp");
+        } else {
+            buttonFive.classList.replace("green", "greenLightUp");
+        }
+        let lightOff = setTimeout(function() {
+            if (buttonClass === "red") {
+                buttonOne.classList.replace("redLightUp", "red");
+            } else if (buttonClass === "yellow") {
+                buttonTwo.classList.replace("yellowLightUp", "yellow");
+            } else if (buttonClass === "orange") {
+                buttonThree.classList.replace("orangeLightUp", "orange");
+            } else if (buttonClass === "blue") {
+                buttonFour.classList.replace("blueLightUp", "blue");
+            } else {
+                buttonFive.classList.replace("greenLightUp", "green");
+            }
+        }, 500)
+    }
 
     //disables the game board
     function disableBoard() {
@@ -146,20 +150,21 @@ document.addEventListener("DOMContentLoaded", function() {
         buttonThree.disabled = true;
         buttonFour.disabled = true;
         buttonFive.disabled = true;
-  }
+    }
+
     function enableBoard() {
-      buttonOne.disabled = false;
-      buttonTwo.disabled = false;
-      buttonThree.disabled = false;
-      buttonFour.disabled = false;
-      buttonFive.disabled = false;
-  }
+        buttonOne.disabled = false;
+        buttonTwo.disabled = false;
+        buttonThree.disabled = false;
+        buttonFour.disabled = false;
+        buttonFive.disabled = false;
+    }
 
-  start.addEventListener("click", function() {
+    start.addEventListener("click", function() {
 
-      newSimon();
-      console.log(pattern[0])
-  })
+        newSimon();
+        console.log(pattern[0])
+    })
 
 
 
