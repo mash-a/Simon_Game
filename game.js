@@ -3,6 +3,7 @@ document.addEventListener("DOMContentLoaded", function() {
   let pattern = [];
   let myButtons = [];
   // let simonCount = 0;
+  let resetButton = document.querySelector(".resetButton");
   let start = document.querySelector(".startButton");
   let buttons = document.getElementsByClassName("button");
   let buttonOne = document.querySelector(".melon");
@@ -27,21 +28,24 @@ document.addEventListener("DOMContentLoaded", function() {
     buttonThree.addEventListener("click", myButtonsSequence);
     buttonFour.addEventListener("click", myButtonsSequence);
     buttonFive.addEventListener("click", myButtonsSequence);
+    resetButton.addEventListener("click", reset);
 
     start.addEventListener("click", function() {
 
         newSimon();
-        disableBoard();
-        addButtonToSequence();
-        patternSequence();
-
         console.log(pattern[0])
     })
-    function newSimon () {
-
+    function reset() {
       pattern = [];
       myButtons = [];
       gameScore = 0;
+      myScore.innerHTML = `Your score : ${gameScore}`;
+      }
+    function newSimon () {
+      reset();
+      disableBoard();
+      addButtonToSequence();
+      patternSequence();
     }
 
     function generateButton() {

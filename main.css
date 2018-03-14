@@ -1,6 +1,9 @@
 body{
   background-color: #1c1d21 !important;
 }
+.container {
+  justify-content: space-around !important;
+}
 
 .button {
   border-radius: 50%;
