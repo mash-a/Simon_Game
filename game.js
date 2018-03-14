@@ -40,16 +40,16 @@ document.addEventListener("DOMContentLoaded", function() {
 
     function newSimon() {
         // reset();
-      //  let disabled = setTimeout(disableBoard, 1000);
+        //  let disabled = setTimeout(disableBoard, 1000);
         addButtonToSequence();
         patternSequence();
     }
-    function nextSimon(){
-      for(let i = 0 ; i < pattern.length; i ++) {
-        animate(pattern[i]);
-      }
-      generateButton();
-    }
+    // function nextSimon(){
+    //   for(let i = 0 ; i < pattern.length; i ++) {
+    //     animate(pattern[i]);
+    //   }
+    //   generateButton();
+    // }
 
     function generateButton() {
         let randomButton = buttons[Math.floor(Math.random() * 5)];
@@ -84,23 +84,25 @@ document.addEventListener("DOMContentLoaded", function() {
     function myButtonsSequence(event) {
         myButtons.push(event.target);
         console.log(myButtons)
-      }
+    }
 
     //check my pattern against the random simon pattern
     function checksPattern(pattern, myButtons) {
-          if (pattern.length === myButtons.length) {
-                if (pattern[myButtons.length - 1] === myButtons[myButtons.length - 1]) {
-                    if (pattern.length === 20) {
-                        simonMessage.innerHTML = "Congrats! You Won!"
-                        high_score = 20;
-                        checkScore(myScore, high_score);
-                        newSimon();
-                    } else {
-                        //next round of buttons
-                        nextSimon();
-                    }
-                }
+        if (pattern[pattern.length - 1] !== myButtons[myButtons.length - 1]) {
+            reset();
+        } else if (pattern.length === myButtons.length) {
+            if (pattern.length === 20) {
+                simonMessage.innerHTML = "Congrats! You Won!"
+                high_score = 20;
+                checkScore(myScore, high_score);
+                reset();
+            } else {
+                //next round of buttons
+                newSimon();
             }
+        } else {
+            reset()
+        }
 
     }
     //checking the score and storing it away into local storage
@@ -168,9 +170,9 @@ document.addEventListener("DOMContentLoaded", function() {
 
         newSimon();
         console.log(pattern)
-        checksPattern(pattern, myButtons);
-    })
 
+    })
+    checksPattern(pattern, myButtons);
 
     console.log(myButtons)
 

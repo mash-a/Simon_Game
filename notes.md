@@ -43,3 +43,13 @@
 ncaught TypeError: Cannot read property 'classList' of undefined
     at animateButton (game.js:105)
     at game.js:57
+
+
+
+
+
+pinpoints :
+  - enabling user interactivity with the game
+  - figuring out how to make the function remember the random inputs and then to play them back
+  - setintervals!!!
+  
