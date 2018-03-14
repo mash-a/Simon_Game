@@ -22,15 +22,12 @@ document.addEventListener("DOMContentLoaded", function() {
     buttonFour.disabled = false;
     buttonFive.disabled = false;
 
-    //button event listeners to compare buttons being pressed to the button
-    buttonOne.addEventListener("click", myButtonsSequence);
-    buttonTwo.addEventListener("click", myButtonsSequence);
-    buttonThree.addEventListener("click", myButtonsSequence);
-    buttonFour.addEventListener("click", myButtonsSequence);
-    buttonFive.addEventListener("click", myButtonsSequence);
-    resetButton.addEventListener("click", reset);
 
 
+    // function startSimon(){
+    //   newSimon();
+    //   checksPattern();
+    // }
     function reset() {
         pattern = [];
         myButtons = [];
@@ -84,13 +81,20 @@ document.addEventListener("DOMContentLoaded", function() {
     function myButtonsSequence(event) {
         myButtons.push(event.target);
         console.log(myButtons)
+      //  checksPattern();
     }
 
     //check my pattern against the random simon pattern
-    function checksPattern(pattern, myButtons) {
-        if (pattern[pattern.length - 1] !== myButtons[myButtons.length - 1]) {
+    function checksPattern() {
+      console.log(pattern[0]);
+      console.log(myButtons[0]);
+      for(let i = 0; i < pattern.length; i++){
+        if (pattern[i] !== myButtons[i]) {
             reset();
-        } else if (pattern.length === myButtons.length) {
+            simonMessage.innerHTML = "Lost!"
+        }
+      }
+        if (pattern.length === myButtons.length) {
             if (pattern.length === 20) {
                 simonMessage.innerHTML = "Congrats! You Won!"
                 high_score = 20;
@@ -100,10 +104,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 //next round of buttons
                 newSimon();
             }
-        } else {
-            reset()
         }
-
     }
     //checking the score and storing it away into local storage
     //need to fix this function
@@ -167,12 +168,19 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     start.addEventListener("click", function() {
-
-        newSimon();
-        console.log(pattern)
-
+    newSimon();
+    console.log(pattern)
+      for(let i = 0; i < pattern.length; i ++) {pattern[i].addEventListener("click", checksPattern)};
     })
-    checksPattern(pattern, myButtons);
+
+    //button event listeners to compare buttons being pressed to the button
+    buttonOne.addEventListener("click", myButtonsSequence);
+    buttonTwo.addEventListener("click", myButtonsSequence);
+    buttonThree.addEventListener("click", myButtonsSequence);
+    buttonFour.addEventListener("click", myButtonsSequence);
+    buttonFive.addEventListener("click", myButtonsSequence);
+    resetButton.addEventListener("click", reset);
+
 
     console.log(myButtons)
 
