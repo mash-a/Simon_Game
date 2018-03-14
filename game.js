@@ -93,6 +93,7 @@ document.addEventListener("DOMContentLoaded", function() {
     function myButtonsSequence(event) {
         myButtons.push(event.target);
         //animateButton(event.target)
+        // may not even need the animateButton
         console.log(myButtons)
         //checksPattern();
     }
@@ -104,7 +105,8 @@ document.addEventListener("DOMContentLoaded", function() {
               if(pattern[i] === myButtons[i]) {
                 if(pattern.length === 20) {
                   alert("Awesome Game!");
-                  //newsimongame function 
+
+                  //newsimongame function
                 }
               }
             }
