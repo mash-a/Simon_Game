@@ -40,9 +40,15 @@ document.addEventListener("DOMContentLoaded", function() {
 
     function newSimon() {
         // reset();
-        let disabled = setTimeout(disableBoard, 1000);
+      //  let disabled = setTimeout(disableBoard, 1000);
         addButtonToSequence();
         patternSequence();
+    }
+    function nextSimon(){
+      for(let i = 0 ; i < pattern.length; i ++) {
+        animate(pattern[i]);
+      }
+      generateButton();
     }
 
     function generateButton() {
@@ -77,17 +83,13 @@ document.addEventListener("DOMContentLoaded", function() {
     //push the buttons that i have pressed into the array holding my presses
     function myButtonsSequence(event) {
         myButtons.push(event.target);
-        //animateButton(event.target)
-        // may not even need the animateButton
         console.log(myButtons)
-        //checksPattern();
-    }
+      }
 
     //check my pattern against the random simon pattern
     function checksPattern(pattern, myButtons) {
-        for (let i = 0; i < simonArr.length; i++) {
-            if (pattern.length === myButtons.length) {
-                if (pattern[i] === myButtons[i]) {
+          if (pattern.length === myButtons.length) {
+                if (pattern[myButtons.length - 1] === myButtons[myButtons.length - 1]) {
                     if (pattern.length === 20) {
                         simonMessage.innerHTML = "Congrats! You Won!"
                         high_score = 20;
@@ -95,12 +97,11 @@ document.addEventListener("DOMContentLoaded", function() {
                         newSimon();
                     } else {
                         //next round of buttons
-                        generateButton();
-                        patternSequence();
+                        nextSimon();
                     }
                 }
             }
-        }
+
     }
     //checking the score and storing it away into local storage
     //need to fix this function
@@ -119,7 +120,7 @@ document.addEventListener("DOMContentLoaded", function() {
     //lights up the buttons when they are either pushed or not pushed
     function animateButton(button) {
         let buttonClass = button.classList[1];
-        console.log(buttonClass)
+        //console.log(buttonClass)
         if (buttonClass === "red") {
             buttonOne.classList.replace("red", "redLightUp");
         } else if (buttonClass === "yellow") {
@@ -166,9 +167,12 @@ document.addEventListener("DOMContentLoaded", function() {
     start.addEventListener("click", function() {
 
         newSimon();
-        console.log(pattern[0])
+        console.log(pattern)
+        checksPattern(pattern, myButtons);
     })
 
+
+    console.log(myButtons)
 
 
 })
