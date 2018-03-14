@@ -34,6 +34,7 @@ document.addEventListener("DOMContentLoaded", function() {
         disableBoard();
         addButtonToSequence();
         patternSequence();
+
         console.log(pattern[0])
     })
     function newSimon () {
@@ -142,16 +143,14 @@ document.addEventListener("DOMContentLoaded", function() {
         buttonThree.disabled = true;
         buttonFour.disabled = true;
         buttonFive.disabled = true;
-        start.disabled = true;
-    }
+  }
     function enableBoard() {
       buttonOne.disabled = false;
       buttonTwo.disabled = false;
       buttonThree.disabled = false;
       buttonFour.disabled = false;
       buttonFive.disabled = false;
-      start.disabled = false;
-    }
+  }
 
 
 
