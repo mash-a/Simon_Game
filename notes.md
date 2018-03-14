@@ -39,3 +39,7 @@
 
 //using setIntervals with clearIntervals
 //create a disable board function
+
+ncaught TypeError: Cannot read property 'classList' of undefined
+    at animateButton (game.js:105)
+    at game.js:57

@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", function() {
   //Variables
   let pattern = [];
   let myButtons = [];
-  let simonCount = 0;
+  // let simonCount = 0;
   let start = document.querySelector(".startButton");
   let buttons = document.getElementsByClassName("button");
   let buttonOne = document.querySelector(".melon");
@@ -29,7 +29,7 @@ document.addEventListener("DOMContentLoaded", function() {
     buttonFive.addEventListener("click", myButtonsSequence);
 
     start.addEventListener("click", function() {
-        score.innerHTML = `Your score : ${++gameScore}`;
+        myScore.innerHTML = `Your score : ${gameScore}`;
         patternSequence();
         console.log(pattern[0])
     })
@@ -44,7 +44,8 @@ document.addEventListener("DOMContentLoaded", function() {
         pattern.push(randomButton);
     }
     function addButtonToSequence(){
-
+      gameScore++;
+      generateButton();
     }
 
     //the sequence that will start off the game
