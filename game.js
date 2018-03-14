@@ -6,11 +6,11 @@ document.addEventListener("DOMContentLoaded", function() {
   let resetButton = document.querySelector(".resetButton");
   let start = document.querySelector(".startButton");
   let buttons = document.getElementsByClassName("button");
-  let buttonOne = document.querySelector(".melon");
-  let buttonTwo = document.querySelector(".champagne");
-  let buttonThree = document.querySelector(".tuscany");
-  let buttonFour = document.querySelector(".trolley");
-  let buttonFive = document.querySelector(".davys");
+  let buttonOne = document.querySelector(".red");
+  let buttonTwo = document.querySelector(".yellow");
+  let buttonThree = document.querySelector(".orange");
+  let buttonFour = document.querySelector(".blue");
+  let buttonFive = document.querySelector(".green");
   let myScore = document.querySelector(".gameScore");
   let high_score = document.querySelector(".highScore");
   let highScore = 0;
@@ -67,12 +67,12 @@ document.addEventListener("DOMContentLoaded", function() {
 
           animateButton(pattern[i]);
           i++;
-          if(i > pattern.length-1) {
+          if(i >= pattern.length) {
 
             clearInterval(sequence);
           }
         }, 500)
-        myButtons = [];
+
     }
     //push the buttons that i have pressed into the array holding my presses
     function myButtonsSequence(event) {
@@ -115,28 +115,28 @@ document.addEventListener("DOMContentLoaded", function() {
     function animateButton(button) {
       let buttonClass = button.classList[1];
       console.log(buttonClass)
-      if(buttonClass === "melon"){
-        buttonOne.classList.replace("melon", "melonLightUp");
-      } else if(buttonClass === "champagne"){
-        buttonTwo.classList.replace("champagne", "champagneLightUp");
-      } else if (buttonClass === "tuscany"){
-        buttonThree.classList.replace("tuscany", "tuscanyLightUp");
-      } else if (buttonClass === "trolley"){
-        buttonFour.classList.replace("trolley", "trolleyLightUp");
+      if(buttonClass === "red"){
+        buttonOne.classList.replace("red", "redLightUp");
+      } else if(buttonClass === "yellow"){
+        buttonTwo.classList.replace("yellow", "yellowLightUp");
+      } else if (buttonClass === "orange"){
+        buttonThree.classList.replace("orange", "orangeLightUp");
+      } else if (buttonClass === "blue"){
+        buttonFour.classList.replace("blue", "blueLightUp");
       } else {
-        buttonFive.classList.replace("davys", "davysLightUp");
+        buttonFive.classList.replace("green", "greenLightUp");
       }
       let lightOff = setTimeout (function (){
-          if(buttonClass === "melon"){
-            buttonOne.classList.replace("melonLightUp", "melon");
-          } else if (buttonClass === "champagne"){
-            buttonTwo.classList.replace("champagneLightUp", "champagne");
-          } else if (buttonClass === "tuscany"){
-            buttonThree.classList.replace("tuscanyLightUp", "tuscany");
-          } else if (buttonClass === "trolley") {
-            buttonFour.classList.replace("trolleyLightUp", "trolley");
+          if(buttonClass === "red"){
+            buttonOne.classList.replace("redLightUp", "red");
+          } else if (buttonClass === "yellow"){
+            buttonTwo.classList.replace("yellowLightUp", "yellow");
+          } else if (buttonClass === "orange"){
+            buttonThree.classList.replace("orangeLightUp", "orange");
+          } else if (buttonClass === "blue") {
+            buttonFour.classList.replace("blueLightUp", "blue");
           }else {
-            buttonFive.classList.replace("davysLightUp", "davys");
+            buttonFive.classList.replace("greenLightUp", "green");
           }
       }, 500)
 }

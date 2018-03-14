@@ -16,61 +16,61 @@ body{
   border-radius: 25%;
   font-size:  35px !important;
 }
-.melon {
+.red {
   background-color: #f3a2b1;
 }
-.melon:hover{
+.red:hover{
   background-color: #e0002b;
 }
-.melonLightUp{
+.redLightUp{
   background-color: #e0002b;
   border-radius: 50%;
   height: 150px;
   width: 150px;
 }
-.champagne {
+.yellow {
   background-color: #faf9b5;
 }
-.champagne:hover{
+.yellow:hover{
   background-color: #eae604;
 }
-.champagneLightUp{
+.yellowLightUp{
   background-color: #eae604;
   border-radius: 50%;
   height: 150px;
   width: 150px;
 }
-.tuscany {
+.orange {
   background-color: #fcd5b1;
 }
-.tuscany:hover{
+.orange:hover{
   background-color: #f97800;
 }
-.tuscanyLightUp{
+.orangeLightUp{
   background-color: #f97800;
   border-radius: 50%;
   height: 150px;
   width: 150px;
 }
-.trolley {
+.blue {
   background-color: #a2d2e4;
 }
-.trolley:hover{
+.blue:hover{
   background-color: #0085b5
 }
-.trolleyLightUp{
+.blueLightUp{
   background-color: #0085b5;
   border-radius: 50%;
   height: 150px;
   width: 150px;
 }
-.davys {
+.green {
   background-color: #abffa2;
 }
-.davys:hover{
+.green:hover{
   background-color: #19ff00
 }
-.davysLightUp{
+.greenLightUp{
   background-color: #19ff00;
   border-radius: 50%;
   height: 150px;
