@@ -2,6 +2,7 @@ document.addEventListener("DOMContentLoaded", function() {
     //Variables
     let pattern = [];
     let myButtons = [];
+    let count = 0;
     let simonMessage = document.querySelector(".message");
     let resetButton = document.querySelector(".resetButton");
     let start = document.querySelector(".startButton");
@@ -32,7 +33,7 @@ document.addEventListener("DOMContentLoaded", function() {
         pattern = [];
         myButtons = [];
         gameScore = 0;
-        myScore.innerHTML = `Your score : ${gameScore}`;
+        myScore.innerHTML = `Your score : 0`;
     }
 
     function newSimon() {
@@ -50,84 +51,76 @@ document.addEventListener("DOMContentLoaded", function() {
 
     function generateButton() {
         let randomButton = buttons[Math.floor(Math.random() * 5)];
-        pattern.push(randomButton);
+        pattern.push(randomButton.className);
+        console.log(pattern);
     }
 
     function addButtonToSequence() {
-
-        ++gameScore;
         myScore.innerHTML = `Your score : ${gameScore}`;
         generateButton();
-
     }
 
     //the sequence that will start off the game
     function patternSequence() {
-        // generateButton();
         // console.log(pattern);
         let i = 0;
         let sequence = setInterval(function() {
-
             animateButton(pattern[i]);
             i++;
             if (i >= pattern.length) {
-
                 clearInterval(sequence);
             }
         }, 500)
-
     }
     //push the buttons that i have pressed into the array holding my presses
     function myButtonsSequence(event) {
-        myButtons.push(event.target);
+        myButtons.push(event.target.className);
+        console.log(event.target.className)
         console.log(myButtons)
-      //  checksPattern();
+        count++;
+        //console.log(count);
     }
 
     //check my pattern against the random simon pattern
-    function checksPattern() {
-      console.log(pattern[0]);
-      console.log(myButtons[0]);
-      for(let i = 0; i < pattern.length; i++){
-        if (pattern[i] !== myButtons[i]) {
-            reset();
-            simonMessage.innerHTML = "Lost!"
-        }
-      }
-        if (pattern.length === myButtons.length) {
-            if (pattern.length === 20) {
-                simonMessage.innerHTML = "Congrats! You Won!"
-                high_score = 20;
-                checkScore(myScore, high_score);
-                reset();
-            } else {
-                //next round of buttons
-                newSimon();
-            }
-        }
-    }
+
+
+    // function checksPattern() {
+    //   let patternClass = pattern[i].className;
+    //   let myButtonClass = myButton[i].className;
+    //     for (let i = 0; i < pattern.length; i++) {
+    //         if (myButtons[i].classList === pattern[i].classList) {
+    //             ++gameScore;
+    //             newSimon();
+    //             if (pattern.length === 20) {
+    //                 simonMessage.innerHTML = "Congrats! You Won!"
+    //                 high_score = 20;
+    //                 checkScore(myScore, high_score);
+    //                 reset();
+    //             }
+    //         }
+    //     }
+    //
+    // }
     //checking the score and storing it away into local storage
     //need to fix this function
-    function checkScore(myScore, high_score) {
-        high_score = localStorage.getItem("high_score");
-        if (high_score !== null) {
-            if (myScore >= high_score) {
-                localStorage.setItem("high_score", high_score);
+    // function checkScore(myScore, high_score) {
+    //     high_score = localStorage.getItem("high_score");
+    //     if (high_score !== null) {
+    //         if (myScore >= high_score) {
+    //             localStorage.setItem("high_score", high_score);
+    //         }
+    //     } else {
+    //         localStorage.setItem("high_score", high_score);
+    //     }
+    // }
 
-            }
-        } else {
-            localStorage.setItem("high_score", high_score);
-        }
-    }
-
-    //lights up the buttons when they are either pushed or not pushed
+    //lights up the buttons when they are either pushed
     function animateButton(button) {
-        let buttonClass = button.classList[1];
-        //console.log(buttonClass)
+        let buttonClass = button.slice(7);
         if (buttonClass === "red") {
-            buttonOne.classList.replace("red", "redLightUp");
+          buttonOne.classList.replace("red", "redLightUp");
         } else if (buttonClass === "yellow") {
-            buttonTwo.classList.replace("yellow", "yellowLightUp");
+            buttonTwo.classList.replace( "yellow", "yellowLightUp",);
         } else if (buttonClass === "orange") {
             buttonThree.classList.replace("orange", "orangeLightUp");
         } else if (buttonClass === "blue") {
@@ -137,7 +130,7 @@ document.addEventListener("DOMContentLoaded", function() {
         }
         let lightOff = setTimeout(function() {
             if (buttonClass === "red") {
-                buttonOne.classList.replace("redLightUp", "red");
+              buttonOne.classList.replace("redLightUp", "red");
             } else if (buttonClass === "yellow") {
                 buttonTwo.classList.replace("yellowLightUp", "yellow");
             } else if (buttonClass === "orange") {
@@ -168,11 +161,18 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     start.addEventListener("click", function() {
-    newSimon();
-    console.log(pattern)
-      for(let i = 0; i < pattern.length; i ++) {pattern[i].addEventListener("click", checksPattern)};
-    })
+        newSimon();
+        //console.log(pattern)
+        let userWait = setInterval(function checkPatternLength() {
+              if (pattern.length === count) {
+                  console.log("we match")
+                  
+                  clearInterval(userWait);
+              }
+          }, 1000);
 
+    })
+      //checkPatternLength();
     //button event listeners to compare buttons being pressed to the button
     buttonOne.addEventListener("click", myButtonsSequence);
     buttonTwo.addEventListener("click", myButtonsSequence);
@@ -182,7 +182,7 @@ document.addEventListener("DOMContentLoaded", function() {
     resetButton.addEventListener("click", reset);
 
 
-    console.log(myButtons)
+
 
 
 })
