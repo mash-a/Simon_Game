@@ -14,6 +14,7 @@ let buttonFive = document.querySelector(".green");
 //these scores are only for the innerHTML
 let myScore = document.querySelector(".gameScore");
 let high_score = document.querySelector(".highScore");
+high_score.innerHTML = `High Score : ${localStorage.getItem("high_score")}`;
 //these are variables to help change the innerHTML of the above scores
 let highScore = 0;
 let gameScore = 0;
@@ -57,12 +58,14 @@ function reset() {
     myButtons = [];
     gameScore = 0;
     myScore.innerHTML = `Your score : ${gameScore}`;
+
     console.log(pattern)
 }
 
 function newSimon() {
     addButtonToSequence();
     patternSequence();
+    simonMessage.innerHTML = "";
 }
 
 function generateButton() {
@@ -106,6 +109,7 @@ function checksPattern() {
             gameScore++;
             myScore.innerHTML = `Your score : ${gameScore}`;
             newSimon();
+
             myButtons = [];
             if (pattern.length === 20) {
                 checkScore();
@@ -133,7 +137,7 @@ function checkScore() {
 //checking the score and storing it away into local storage
 //need to fix this function
 function checkScoreStorage() {
-    high_score = localStorage.getItem("high_score");
+
     if (high_score !== "null") {
         if (gameScore > high_score) {
 

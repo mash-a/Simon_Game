@@ -29,8 +29,8 @@ body{
 .redLightUp{
   background-color: #e0002b;
   border-radius: 50%;
-  height: 150px;
-  width: 150px;
+  height: 175px;
+  width: 175px;
 }
 .yellow {
   background-color: #faf9b5;
@@ -42,8 +42,8 @@ body{
 .yellowLightUp{
   background-color: #ccc802;
   border-radius: 50%;
-  height: 150px;
-  width: 150px;
+  height: 175px;
+  width: 175px;
 }
 .orange {
   background-color: #fcd5b1;
@@ -55,8 +55,8 @@ body{
 .orangeLightUp{
   background-color: #f97800;
   border-radius: 50%;
-  height: 150px;
-  width: 150px;
+  height: 175px;
+  width: 175px;
 }
 .blue {
   background-color: #a2d2e4;
@@ -68,8 +68,8 @@ body{
 .blueLightUp{
   background-color: #0085b5;
   border-radius: 50%;
-  height: 150px;
-  width: 150px;
+  height: 175px;
+  width: 175px;
 }
 .green {
   background-color: #abffa2;
@@ -81,8 +81,8 @@ body{
 .greenLightUp{
   background-color: #19ff00;
   border-radius: 50%;
-  height: 150px;
-  width: 150px;
+  height: 175px;
+  width: 175px;
 }
 .gameScore, .highScore, .message {
   color: #fff4e9;
