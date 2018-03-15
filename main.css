@@ -16,6 +16,11 @@ body{
   border-radius: 25%;
   font-size:  35px !important;
 }
+.resetButton {
+  background-color: #fff4e9;
+  border-radius: 25%;
+  font-size:  33px !important;
+}
 .red {
   background-color: #f3a2b1;
 }

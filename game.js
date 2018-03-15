@@ -164,22 +164,28 @@ document.addEventListener("DOMContentLoaded", function() {
         newSimon();
         //console.log(pattern)
         let userWait = setInterval(function checkPatternLength() {
-              if (pattern.length === count) {
+              if (pattern.length === myButtons.length) {
                   console.log("we match")
-                  
+                  myButtons = [];
+                  newSimon();
                   clearInterval(userWait);
               }
           }, 1000);
 
+
     })
+
+
       //checkPatternLength();
     //button event listeners to compare buttons being pressed to the button
+
     buttonOne.addEventListener("click", myButtonsSequence);
     buttonTwo.addEventListener("click", myButtonsSequence);
     buttonThree.addEventListener("click", myButtonsSequence);
     buttonFour.addEventListener("click", myButtonsSequence);
     buttonFive.addEventListener("click", myButtonsSequence);
     resetButton.addEventListener("click", reset);
+
 
 
 
