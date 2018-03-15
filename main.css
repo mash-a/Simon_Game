@@ -1,7 +1,7 @@
 body{
   background-color: #1c1d21 !important;
 }
-.container {
+.row1, .row3, .row4, .row2 {
   justify-content: space-around !important;
 }
 

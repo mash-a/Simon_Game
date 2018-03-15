@@ -52,7 +52,7 @@ function reset() {
     pattern = [];
     myButtons = [];
     gameScore = 0;
-    myScore.innerHTML = `Your score : 0`;
+    myScore.innerHTML = `Your score : ${gameScore}`;
     console.log(pattern)
 }
 
@@ -84,9 +84,10 @@ function patternSequence() {
     let i = 0;
     let sequence = setInterval(function() {
         animateButton(pattern[i]);
-        console.log(pattern[i])
+        disableBoard();
         i++;
         if (i >= pattern.length) {
+          enableBoard();
             clearInterval(sequence);
         }
     }, 1000)
@@ -98,14 +99,18 @@ function patternSequence() {
 function checksPattern() {
     if (myButtons[myButtons.length - 1] === pattern[myButtons.length - 1]) {
         if(pattern.length === myButtons.length) {
+          gameScore++;
+          myScore.innerHTML = `Your score : ${gameScore}`;
           newSimon();
           myButtons = [];
           if(pattern.length === 20) {
+            checkScore();
             simonMessage.innerHTML = "You Won!";
           }
         }
 
     } else {
+      checkScore();
       simonMessage.innerHTML = "You Lose!";
       reset();
     }
@@ -113,16 +118,16 @@ function checksPattern() {
 }
 //checking the score and storing it away into local storage
 //need to fix this function
-// function checkScore(myScore, high_score) {
-//     high_score = localStorage.getItem("high_score");
-//     if (high_score !== null) {
-//         if (myScore >= high_score) {
-//             localStorage.setItem("high_score", high_score);
-//         }
-//     } else {
-//         localStorage.setItem("high_score", high_score);
-//     }
-// }
+function checkScore() {
+    high_score = localStorage.getItem("high_score");
+    if (high_score !== null) {
+        if (myScore >= high_score) {
+            localStorage.setItem("high_score", high_score);
+        }
+    } else {
+        localStorage.setItem("high_score", high_score);
+    }
+}
 
 //lights up the buttons when they are pushed
 function animateButton(button) {
