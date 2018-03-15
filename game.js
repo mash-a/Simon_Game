@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", function() {
+
     //Variables
     let pattern = [];
     let myButtons = [];
@@ -34,6 +34,7 @@ document.addEventListener("DOMContentLoaded", function() {
         myButtons = [];
         gameScore = 0;
         myScore.innerHTML = `Your score : 0`;
+        console.log(pattern)
     }
 
     function newSimon() {
@@ -83,11 +84,25 @@ document.addEventListener("DOMContentLoaded", function() {
 
     //check my pattern against the random simon pattern
 
-    //
-    // function checksPattern() {
-    //
-    //
-    // }
+
+    function checksPattern() {
+       if(myButtons[myButtons.length - 1] !== pattern[myButtons.length - 1]) {
+        simonMessage.innerHTML = "You Lose";
+        reset();
+
+      } else  {
+        if( pattern.length === 20){
+          if(pattern.length === myButtons.length){
+            simonMessage.innerHTML = "You Won!";
+          }
+        } else {
+          myButtons = [];
+          newSimon();
+
+        }
+      }
+
+    }
     //checking the score and storing it away into local storage
     //need to fix this function
     // function checkScore(myScore, high_score) {
@@ -148,27 +163,28 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     start.addEventListener("click", function() {
+      reset();
         newSimon();
         //console.log(pattern)
-        let userWait = setInterval(function checkPattern() {
-          if(myButtons[myButtons.length - 1] !== pattern[myButtons.length - 1]) {
-            simonMessage.innerHTML = "You Lose";
-            reset();
-            clearInterval(userWait);
-          } else  {
-            if( pattern.length === 20){
-              if(pattern.length === myButtons.length){
-                simonMessage.innerHTML = "You Won!";
-              }
-            } else {
-              myButtons = [];
-              newSimon();
-              clearInterval();
-            }
-          }
-          clearInterval();
-
-          }, 2000);
+        // let userWait = setInterval(function checkPattern() {
+        //   if(myButtons[myButtons.length - 1] !== pattern[myButtons.length - 1]) {
+        //     simonMessage.innerHTML = "You Lose";
+        //     reset();
+        //     clearInterval(userWait);
+        //   } else  {
+        //     if( pattern.length === 20){
+        //       if(pattern.length === myButtons.length){
+        //         simonMessage.innerHTML = "You Won!";
+        //       }
+        //     } else {
+        //       myButtons = [];
+        //       newSimon();
+        //       clearInterval();
+        //     }
+        //   }
+        //   clearInterval();
+        //
+        //   }, 2000);
 
     console.log(pattern)
     console.log(myButtons);
@@ -187,7 +203,11 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 console.log(pattern)
-
-
+document.body.addEventListener("click", function(event) {
+  let clicked = event.target.className;
+  let buttonsArr = ["button red", "button yellow", "button orange", "button blue", "button green"];
+  if(buttonsArr.indexOf(clicked) > -1) {
+    checksPattern();
+  }
 
 })
