@@ -57,7 +57,6 @@ function reset() {
 }
 
 function newSimon() {
-    //  let disabled = setTimeout(disableBoard, 1000);
     addButtonToSequence();
     patternSequence();
 }
@@ -85,31 +84,30 @@ function patternSequence() {
     let i = 0;
     let sequence = setInterval(function() {
         animateButton(pattern[i]);
+        console.log(pattern[i])
         i++;
         if (i >= pattern.length) {
             clearInterval(sequence);
         }
-    }, 500)
+    }, 1000)
 }
 
 
 //check my pattern against the random simon pattern
 
 function checksPattern() {
-    if (myButtons[myButtons.length - 1] !== pattern[myButtons.length - 1]) {
-        simonMessage.innerHTML = "You Lose";
-        reset();
+    if (myButtons[myButtons.length - 1] === pattern[myButtons.length - 1]) {
+        if(pattern.length === myButtons.length) {
+          newSimon();
+          myButtons = [];
+          if(pattern.length === 20) {
+            simonMessage.innerHTML = "You Won!";
+          }
+        }
 
     } else {
-        if (pattern.length === 20) {
-            if (pattern.length === myButtons.length) {
-                simonMessage.innerHTML = "You Won!";
-            }
-        } else {
-            myButtons = [];
-            newSimon();
-
-        }
+      simonMessage.innerHTML = "You Lose!";
+      reset();
     }
 
 }
@@ -152,7 +150,7 @@ function animateButton(button) {
         } else {
             buttonFive.classList.replace("greenLightUp", "green");
         }
-    }, 300)
+    }, 400)
 }
 
 //disables the game board
