@@ -17,10 +17,6 @@ body{
   font-size:  35px !important;
 
 }
-
-.startButton a {
-  text-decoration: none;
-}
 .resetButton {
   background-color: #fff4e9;
   border-radius: 25%;

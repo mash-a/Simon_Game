@@ -137,11 +137,11 @@ function checkScoreStorage() {
     if (high_score !== "null") {
         if (gameScore > high_score) {
 
-          high_score = parseInt(gameScore);
+            high_score = parseInt(gameScore);
             localStorage.setItem("high_score", high_score);
         }
-    } else if(high_score === "null") {
-      console.log("what is storage")
+    } else if (high_score === "null") {
+        console.log("what is storage")
         high_score = parseInt(gameScore);
         localStorage.setItem("high_score", high_score);
     }
