@@ -37,7 +37,7 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     function newSimon() {
-        // reset();
+        reset();
         //  let disabled = setTimeout(disableBoard, 1000);
         addButtonToSequence();
         patternSequence();
@@ -163,9 +163,10 @@ document.addEventListener("DOMContentLoaded", function() {
             } else {
               myButtons = [];
               newSimon();
+              clearInterval();
             }
           }
-
+          clearInterval();
 
           }, 2000);
 

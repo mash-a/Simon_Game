@@ -23,6 +23,7 @@ body{
 }
 .red {
   background-color: #f3a2b1;
+  border-color: #fdfffc;
 }
 .red:hover{
   background-color: #e0002b;
@@ -35,6 +36,7 @@ body{
 }
 .yellow {
   background-color: #faf9b5;
+  border-color: #fdfffc;
 }
 .yellow:hover{
   background-color: #ccc802;
@@ -47,6 +49,7 @@ body{
 }
 .orange {
   background-color: #fcd5b1;
+  border-color: #fdfffc;
 }
 .orange:hover{
   background-color: #f97800;
@@ -59,6 +62,7 @@ body{
 }
 .blue {
   background-color: #a2d2e4;
+  border-color: #fdfffc;
 }
 .blue:hover{
   background-color: #0085b5
@@ -71,6 +75,7 @@ body{
 }
 .green {
   background-color: #abffa2;
+  border-color: #fdfffc;
 }
 .green:hover{
   background-color: #19ff00
