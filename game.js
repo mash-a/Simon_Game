@@ -129,7 +129,8 @@ function checksPattern() {
 }
 
 function checkScore() {
-    if (gameScore >= highScore) {
+  let storedScore = localStorage.getItem("high_score");
+    if (gameScore >= storedScore) {
         highScore = gameScore;
         high_score.innerHTML = `High Score : ${highScore}`;
     }

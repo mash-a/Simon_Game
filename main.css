@@ -1,6 +1,7 @@
 body{
   background-color: #1c1d21 !important;
 }
+
 .button {
   border-radius: 50%;
   height: 150px;
@@ -8,16 +9,26 @@ body{
   transition-duration: 0.4s;
   text-decoration: none;
   }
+  .button:focus {
+    outline:none;
+  }
+
 .startButton{
   background-color: #fff4e9;
   border-radius: 25%;
   font-size:  35px !important;
 
 }
+.startButton:focus {
+  outline: none;
+}
 .resetButton {
   background-color: #fff4e9;
   border-radius: 25%;
   font-size:  33px !important;
+}
+.resetButton:focus {
+  outline: none;
 }
 .red {
   background-color: #f3a2b1;
@@ -25,6 +36,8 @@ body{
 }
 .red:hover{
   background-color: #e0002b;
+  height: 175px;
+  width: 175px;
 }
 .redLightUp{
   background-color: #e0002b;
@@ -38,6 +51,8 @@ body{
 }
 .yellow:hover{
   background-color: #ccc802;
+  height: 175px;
+  width: 175px;
 }
 .yellowLightUp{
   background-color: #ccc802;
@@ -51,6 +66,8 @@ body{
 }
 .orange:hover{
   background-color: #f97800;
+  height: 175px;
+  width: 175px;
 }
 .orangeLightUp{
   background-color: #f97800;
@@ -63,7 +80,9 @@ body{
   border-color: #fdfffc;
 }
 .blue:hover{
-  background-color: #0085b5
+  background-color: #0085b5;
+  height: 175px;
+  width: 175px;
 }
 .blueLightUp{
   background-color: #0085b5;
@@ -76,7 +95,9 @@ body{
   border-color: #fdfffc;
 }
 .green:hover{
-  background-color: #19ff00
+  background-color: #19ff00;
+  height: 175px;
+  width: 175px;
 }
 .greenLightUp{
   background-color: #19ff00;
@@ -89,8 +110,7 @@ body{
   font-size: 35px !important;
 }
 .message {
-  {
-  text-shadow: 0 1px 0 #ccc,
+ text-shadow: 0 1px 0 #ccc,
                0 2px 0 #c9c9c9,
                0 3px 0 #bbb,
                0 4px 0 #b9b9b9,
@@ -103,5 +123,5 @@ body{
                0 10px 10px rgba(0,0,0,.2),
                0 20px 20px rgba(0,0,0,.15);
 }
-}
+
 //need to create both a normal color class and a lightUp class for each button
