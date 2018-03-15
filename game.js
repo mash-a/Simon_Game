@@ -52,7 +52,7 @@ document.addEventListener("DOMContentLoaded", function() {
     function generateButton() {
         let randomButton = buttons[Math.floor(Math.random() * 5)];
         pattern.push(randomButton.className);
-        console.log(pattern);
+        //console.log(pattern);
     }
 
     function addButtonToSequence() {
@@ -78,27 +78,14 @@ document.addEventListener("DOMContentLoaded", function() {
         console.log(event.target.className)
         console.log(myButtons)
         count++;
-        //console.log(count);
+        console.log(count);
     }
 
     //check my pattern against the random simon pattern
 
-
+    //
     // function checksPattern() {
-    //   let patternClass = pattern[i].className;
-    //   let myButtonClass = myButton[i].className;
-    //     for (let i = 0; i < pattern.length; i++) {
-    //         if (myButtons[i].classList === pattern[i].classList) {
-    //             ++gameScore;
-    //             newSimon();
-    //             if (pattern.length === 20) {
-    //                 simonMessage.innerHTML = "Congrats! You Won!"
-    //                 high_score = 20;
-    //                 checkScore(myScore, high_score);
-    //                 reset();
-    //             }
-    //         }
-    //     }
+    //
     //
     // }
     //checking the score and storing it away into local storage
@@ -163,17 +150,28 @@ document.addEventListener("DOMContentLoaded", function() {
     start.addEventListener("click", function() {
         newSimon();
         //console.log(pattern)
-        let userWait = setInterval(function checkPatternLength() {
-              if (pattern.length === myButtons.length) {
-                  console.log("we match")
-                  myButtons = [];
-                  newSimon();
-                  clearInterval(userWait);
+        let userWait = setInterval(function checkPattern() {
+          if(myButtons[myButtons.length - 1] !== pattern[myButtons.length - 1]) {
+            simonMessage.innerHTML = "You Lose";
+            reset();
+            clearInterval(userWait);
+          } else  {
+            if( pattern.length === 20){
+              if(pattern.length === myButtons.length){
+                simonMessage.innerHTML = "You Won!";
               }
-          }, 1000);
+            } else {
+              myButtons = [];
+              newSimon();
+            }
+          }
 
 
-    })
+          }, 2000);
+
+    console.log(pattern)
+    console.log(myButtons);
+  }, false)
 
 
       //checkPatternLength();
@@ -184,10 +182,10 @@ document.addEventListener("DOMContentLoaded", function() {
     buttonThree.addEventListener("click", myButtonsSequence);
     buttonFour.addEventListener("click", myButtonsSequence);
     buttonFive.addEventListener("click", myButtonsSequence);
-    resetButton.addEventListener("click", reset);
+    resetButton.addEventListener("click", reset, false);
 
 
-
+console.log(pattern)
 
 
 
