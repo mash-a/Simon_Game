@@ -14,7 +14,7 @@ let buttonFive = document.querySelector(".green");
 //these scores are only for the innerHTML
 let myScore = document.querySelector(".gameScore");
 let high_score = document.querySelector(".highScore");
-high_score.innerHTML = `High Score : ${localStorage.getItem("high_score")}`;
+
 //these are variables to help change the innerHTML of the above scores
 let highScore = 0;
 let gameScore = 0;
@@ -24,6 +24,14 @@ buttonTwo.disabled = false;
 buttonThree.disabled = false;
 buttonFour.disabled = false;
 buttonFive.disabled = false;
+document.addEventListener("DOMContentLoaded", function () {
+
+  if(localStorage.getItem("high_score" === "null")) {
+    high_score.innerHTML = `High Score : 0`;
+  } else {
+    high_score.innerHTML = `High Score : ${localStorage.getItem("high_score")}`;
+  }
+})
 
 start.addEventListener("click", function() {
     reset();
@@ -52,6 +60,8 @@ document.body.addEventListener("click", function(event) {
     }
 
 })
+
+
 
 function reset() {
     pattern = [];
@@ -129,6 +139,7 @@ function checksPattern() {
 }
 
 function checkScore() {
+
   let storedScore = localStorage.getItem("high_score");
     if (gameScore >= storedScore) {
         highScore = gameScore;
