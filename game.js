@@ -45,8 +45,9 @@ document.body.addEventListener("click", function(event) {
     let clicked = event.target.className;
     let buttonsArr = ["button red", "button yellow", "button orange", "button blue", "button green"];
     if (buttonsArr.indexOf(clicked) > -1) {
-      console.log("highscore", highScore)
+        console.log("highscore", highScore)
         checksPattern();
+
     }
 
 })
@@ -90,7 +91,7 @@ function patternSequence() {
         disableBoard();
         i++;
         if (i >= pattern.length) {
-          enableBoard();
+            enableBoard();
             clearInterval(sequence);
         }
     }, 1000)
@@ -101,44 +102,51 @@ function patternSequence() {
 
 function checksPattern() {
     if (myButtons[myButtons.length - 1] === pattern[myButtons.length - 1]) {
-        if(pattern.length === myButtons.length) {
-          gameScore++;
-          myScore.innerHTML = `Your score : ${gameScore}`;
-          newSimon();
-          myButtons = [];
-          if(pattern.length === 20) {
-            checkScore();
-            checkScoreStorage();
-            simonMessage.innerHTML = "You Won!";
-          }
+        if (pattern.length === myButtons.length) {
+            gameScore++;
+            myScore.innerHTML = `Your score : ${gameScore}`;
+            newSimon();
+            myButtons = [];
+            if (pattern.length === 20) {
+                checkScore();
+                checkScoreStorage();
+                simonMessage.innerHTML = "You Won!";
+            }
         }
 
     } else {
-      checkScore();
-      checkScoreStorage();
-      simonMessage.innerHTML = "You Lose!";
-      reset();
+
+        checkScore();
+        checkScoreStorage();
+        simonMessage.innerHTML = "You Lose!";
+        reset();
     }
 
 }
 
-function checkScore () {
-  if(gameScore >= highScore) {
-    highScore = gameScore;
-    high_score.innerHTML = `High Score : ${highScore}`;
-  }
+function checkScore() {
+    if (gameScore >= highScore) {
+        highScore = gameScore;
+        high_score.innerHTML = `High Score : ${highScore}`;
+    }
 }
 //checking the score and storing it away into local storage
 //need to fix this function
 function checkScoreStorage() {
-    highScore = localStorage.getItem("highScore");
-    if (high_score !== null) {
-        if (myScore >= high_score) {
-          localStorage.setItem("highScore", highScore);
+    high_score = localStorage.getItem("high_score");
+    if (high_score !== "null") {
+        if (gameScore > high_score) {
+
+          high_score = parseInt(gameScore);
+            localStorage.setItem("high_score", high_score);
         }
-    } else {
-        localStorage.setItem("highScore", highScore);
+    } else if(high_score === "null") {
+      console.log("what is storage")
+        high_score = parseInt(gameScore);
+        localStorage.setItem("high_score", high_score);
     }
+
+    return high_score;
 }
 
 //lights up the buttons when they are pushed

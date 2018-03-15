@@ -1,20 +1,25 @@
 body{
   background-color: #1c1d21 !important;
 }
-.row1, .row3, .row4, .row2 {
+/* .row1 {
   justify-content: space-around !important;
-}
-
+} */
 .button {
   border-radius: 50%;
   height: 150px;
   width: 150px;
   transition-duration: 0.4s;
+  text-decoration: none;
   }
 .startButton{
   background-color: #fff4e9;
   border-radius: 25%;
   font-size:  35px !important;
+
+}
+
+.startButton a {
+  text-decoration: none;
 }
 .resetButton {
   background-color: #fff4e9;
