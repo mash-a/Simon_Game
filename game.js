@@ -11,8 +11,10 @@ let buttonTwo = document.querySelector(".yellow");
 let buttonThree = document.querySelector(".orange");
 let buttonFour = document.querySelector(".blue");
 let buttonFive = document.querySelector(".green");
+//these scores are only for the innerHTML
 let myScore = document.querySelector(".gameScore");
 let high_score = document.querySelector(".highScore");
+//these are variables to help change the innerHTML of the above scores
 let highScore = 0;
 let gameScore = 0;
 start.disabled = false;
@@ -43,6 +45,7 @@ document.body.addEventListener("click", function(event) {
     let clicked = event.target.className;
     let buttonsArr = ["button red", "button yellow", "button orange", "button blue", "button green"];
     if (buttonsArr.indexOf(clicked) > -1) {
+      console.log("highscore", highScore)
         checksPattern();
     }
 
@@ -68,7 +71,7 @@ function generateButton() {
 }
 
 function addButtonToSequence() {
-    myScore.innerHTML = `Your score : ${gameScore}`;
+    //myScore.innerHTML = `Your score : ${gameScore}`;
     generateButton();
 }
 //push the buttons that i have pressed into the array holding my presses
@@ -105,27 +108,36 @@ function checksPattern() {
           myButtons = [];
           if(pattern.length === 20) {
             checkScore();
+            checkScoreStorage();
             simonMessage.innerHTML = "You Won!";
           }
         }
 
     } else {
       checkScore();
+      checkScoreStorage();
       simonMessage.innerHTML = "You Lose!";
       reset();
     }
 
 }
+
+function checkScore () {
+  if(gameScore >= highScore) {
+    highScore = gameScore;
+    high_score.innerHTML = `High Score : ${highScore}`;
+  }
+}
 //checking the score and storing it away into local storage
 //need to fix this function
-function checkScore() {
-    high_score = localStorage.getItem("high_score");
+function checkScoreStorage() {
+    highScore = localStorage.getItem("highScore");
     if (high_score !== null) {
         if (myScore >= high_score) {
-            localStorage.setItem("high_score", high_score);
+          localStorage.setItem("highScore", highScore);
         }
     } else {
-        localStorage.setItem("high_score", high_score);
+        localStorage.setItem("highScore", highScore);
     }
 }
 
