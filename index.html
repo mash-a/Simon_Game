@@ -6,19 +6,17 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Bootstrap CSS -->
     <link rel="main stylesheet" href="main.css">
-     <link href="https://fonts.googleapis.com/css?family=Rammetto+One" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Rammetto+One" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+    
     <title>Simon Game</title>
 </head>
 
 <body>
-    <div class="d-flex outerBox">
-
+    <div class=" outerBox">
         <section class="container mt-5">
-
             <div class="row row1 justify-content-center pb-5">
                 <div class="col-3">
                     <button class="button red" id="button1"></button>
@@ -27,8 +25,6 @@
                     <button class="button yellow" id="button2"></button>
                 </div>
             </div>
-
-
             <div class="row row2 justify-content-center pb-5">
                 <div class="col-3 ml-5 pl-5">
                     <button class="button orange" id="button3"></button>
@@ -40,82 +36,37 @@
                     <button class="button blue" id="button4"></button>
                 </div>
             </div>
-
-
             <div class="row row3 justify-content-center pt-4 pb-4">
                 <div class="col-3">
                     <button class="button green" id="button5"></button>
                 </div>
             </div>
-
             <div class="scoreBox">
               <div class="row row4 justify-content-center mt-5 mr-4">
                   <p class="gameScore">Your score : 0 </p>
-                  < /br>
-                      <p class="highScore"></p>
+                  &nbsp;&nbsp;&nbsp;
+                  <p class="highScore"></p>
               </div>
-
-              <div class="row row5 justify-content-center mr-5">
-                  <button class="startButton">Start</button>
-                  < /br>
-                      <button class="resetButton">Reset</button>
-              </div>
+            <div class="row row5 justify-content-center mr-5">
+                <button class="startButton">Start</button>
+                &nbsp;&nbsp;&nbsp;
+                <button class="resetButton">Reset</button>
             </div>
-
-
         </section>
     </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    <div class="container">
+        <div class="row">
+            <nav class="navbar fixed-bottom navbar-dark bg-dark justify-content-center">
+                <a class="navbar-brand" href="https://github.com/mash-a/"><i class="fab fa-github"></i></a>
+            </nav>
+        </div>
+    </div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="game.js"></script>
-    <script src='https://cdn.jsdelivr.net/g/lodash@4(lodash.min.js+lodash.fp.min.js)'></script>
+    <!-- <script src='https://cdn.jsdelivr.net/g/lodash@4(lodash.min.js+lodash.fp.min.js)'></script> -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-
-
-
 </body>
-
 </html>
