@@ -1,19 +1,19 @@
 //Variables
-let pattern = [];
+const simonMessage = document.querySelector(".message");
+const resetButton = document.querySelector(".resetButton");
+const start = document.querySelector(".startButton");
+const buttons = document.getElementsByClassName("button");
+const buttonOne = document.querySelector(".red");
+const buttonTwo = document.querySelector(".yellow");
+const buttonThree = document.querySelector(".orange");
+const buttonFour = document.querySelector(".blue");
+const buttonFive = document.querySelector(".green");
 let myButtons = [];
+let pattern = [];
 let count = 0;
-let simonMessage = document.querySelector(".message");
-let resetButton = document.querySelector(".resetButton");
-let start = document.querySelector(".startButton");
-let buttons = document.getElementsByClassName("button");
-let buttonOne = document.querySelector(".red");
-let buttonTwo = document.querySelector(".yellow");
-let buttonThree = document.querySelector(".orange");
-let buttonFour = document.querySelector(".blue");
-let buttonFive = document.querySelector(".green");
 //these scores are only for the innerHTML
-let myScore = document.querySelector(".gameScore");
-let high_score = document.querySelector(".highScore");
+const myScore = document.querySelector(".gameScore");
+const high_score = document.querySelector(".highScore");
 
 //these are variables to help change the innerHTML of the above scores
 let highScore = 0;

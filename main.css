@@ -8,88 +8,84 @@ body{
   width: 150px;
   transition-duration: 0.4s;
   text-decoration: none;
-  }
-  .button:focus {
-    outline:none;
-  }
+}
 
-.startButton{
+.button:focus {
+  outline:none;
+}
+
+.startButton, .resetButton{
   background-color: #fff4e9;
   border-radius: 25%;
   font-size:  35px !important;
   font-family: 'Rammetto One', cursive;
+  color: black;
 }
-.startButton:focus {
+
+.startButton:focus, .resetButton:focus {
   outline: none;
 }
-.resetButton {
-  background-color: #fff4e9;
-  border-radius: 25%;
-  font-size:  33px !important;
-  font-family: 'Rammetto One', cursive;
-}
-.resetButton:focus {
-  outline: none;
-}
+
 .red {
   background-color: #f3a2b1;
   border-color: #fdfffc;
 }
+
 .red:hover{
   background-color: #e0002b;
-  height: 175px;
-  width: 175px;
+  transform: scale(1.2);
 }
+
 .redLightUp{
   background-color: #e0002b;
   border-radius: 50%;
-  height: 175px;
-  width: 175px;
+  transform: scale(1.2);
 }
+
 .yellow {
   background-color: #faf9b5;
   border-color: #fdfffc;
 }
+
 .yellow:hover{
   background-color: #ccc802;
-  height: 175px;
-  width: 175px;
+  transform: scale(1.2);
 }
+
 .yellowLightUp{
   background-color: #ccc802;
   border-radius: 50%;
-  height: 175px;
-  width: 175px;
+  transform: scale(1.2);
 }
+
 .orange {
   background-color: #fcd5b1;
-  border-color: #fdfffc;
+  /* border-color: #fcd5b1; */
 }
+
 .orange:hover{
   background-color: #f97800;
-  height: 175px;
-  width: 175px;
+  transform: scale(1.2); 
 }
+
 .orangeLightUp{
   background-color: #f97800;
   border-radius: 50%;
-  height: 175px;
-  width: 175px;
+  transform: scale(1.2);
 }
+
 .blue {
   background-color: #a2d2e4;
   border-color: #fdfffc;
 }
 .blue:hover{
   background-color: #0085b5;
-  height: 175px;
-  width: 175px;
+  transform: scale(1.2);
 }
 .blueLightUp{
   background-color: #0085b5;
   border-radius: 50%;
-  height: 175px;
-  width: 175px;
+  transform: scale(1.2);
 }
 .green {
   background-color: #abffa2;
@@ -97,14 +93,12 @@ body{
 }
 .green:hover{
   background-color: #19ff00;
-  height: 175px;
-  width: 175px;
+  transform: scale(1.2);
 }
 .greenLightUp{
   background-color: #19ff00;
   border-radius: 50%;
-  height: 175px;
-  width: 175px;
+  transform: scale(1.2);
 }
 .gameScore, .highScore, .message {
   color: #fff4e9;
@@ -112,5 +106,3 @@ body{
   font-family: 'Rammetto One', cursive;
 }
 
-
-//need to create both a normal color class and a lightUp class for each button
