@@ -15,47 +15,78 @@
 </head>
 
 <body>
+    <div class="container">
+        <h1>Simon Game</h1>
+        <h6>How to play</h6>
+        <ul>
+            <li>click play</li>
+            <li>wait for button to light</li>
+            <li>reproduce the sequence</li>
+        </ul>
+    </div>
     <div class="outerBox">
-        <section class="container mt-5">
-            <div class="row row1 justify-content-center pb-5">
-                <div class="col-3">
+        <section class="container">
+            <div class="row row1 justify-content-center">
+                <div class="">
                     <button class="button red" id="button1"></button>
                 </div>
-                <div class="col-3">
+                <div class="">
+                        <!-- col-3 -->
                     <button class="button yellow" id="button2"></button>
                 </div>
             </div>
-            <div class="row row2 justify-content-center pb-5">
-                <div class="col-3 ml-5 pl-5">
-                    <button class="button orange" id="button3"></button>
+            <div class="row row2 justify-content-center">
+                    <!-- justify-content-center pb-5 -->
+                <div class="">
+                        <!-- col-3 ml-5 pl-5 -->
+                    <button class="button purple" id="button3"></button>
                 </div>
-                <div class="col-3">
-                    <p class="message"></p>
+                <div class="startReset">
+                    <button class="startButton">Start</button>
+                    <button class="resetButton">Reset</button>
                 </div>
-                <div class="col-3 mr-5 pl-1">
+                <div class="">
+                        <!-- col-3 mr-5 pl-1 -->
                     <button class="button blue" id="button4"></button>
                 </div>
             </div>
-            <div class="row row3 justify-content-center pt-4 pb-4">
-                <div class="col-3">
+            <div class="row row3 justify-content-center">
+                    <!-- justify-content-center pt-4 pb-4 -->
+                <div class="">
+                        <!-- col-3 -->
                     <button class="button green" id="button5"></button>
                 </div>
             </div>
+            <div class="row row4 justify-content-center"> 
+                    <p class="message"></p>
+                </div>
             <div class="scoreBox">
-              <div class="row row4 justify-content-center mt-5 mr-4">
+              <div class="row row5 justify-content-center">
+                    <!-- row4  mt-5 mr-4 -->
                   <p class="gameScore">Your score : 0 </p>
                   &nbsp;&nbsp;&nbsp;
                   <p class="highScore"></p>
               </div>
-            <div class="row row5 justify-content-center mr-5">
-                <button class="startButton">Start</button>
-                &nbsp;&nbsp;&nbsp;
-                <button class="resetButton">Reset</button>
+           
+            <div class="row justify-content-center">
+                <a href="https://github.com/mash-a/Simon_Game" target="_blank"><i class="fab fa-github"></i></a>
             </div>
         </section>
     </div>
-        <nav class="navbar fixed-bottom navbar-dark bg-dark justify-content-center">
-           <a class="navbar-brand" href="https://github.com/mash-a/"><i class="fab fa-github"></i></a>
+        <nav class="navbar fixed-bottom navbar-dark bg-dark">
+            <div class="container">
+                <ul class="nav">
+                    <li class="nav-item">
+                        <a class="nav-link pr-1" href="https://twitter.com/emvu_" target="_blank"><i class="fab fa-twitter"></i></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://www.linkedin.com/in/mariya-mego-vela/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    </li>
+                    <li class="nav-item">
+                        <span class="navbar-text">© 2018 Mariya Mego Vela</span>
+                    </li>
+                </ul>
+            </div>
        </nav>
 
     <!-- Optional JavaScript -->

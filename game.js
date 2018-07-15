@@ -5,7 +5,7 @@ const start = document.querySelector(".startButton");
 const buttons = document.getElementsByClassName("button");
 const buttonOne = document.querySelector(".red");
 const buttonTwo = document.querySelector(".yellow");
-const buttonThree = document.querySelector(".orange");
+const buttonThree = document.querySelector(".purple");
 const buttonFour = document.querySelector(".blue");
 const buttonFive = document.querySelector(".green");
 let myButtons = [];
@@ -52,7 +52,7 @@ resetButton.addEventListener("click", reset, false);
 
 document.body.addEventListener("click", function(event) {
     let clicked = event.target.className;
-    let buttonsArr = ["button red", "button yellow", "button orange", "button blue", "button green"];
+    let buttonsArr = ["button red", "button yellow", "button purple", "button blue", "button green"];
     if (buttonsArr.indexOf(clicked) > -1) {
         console.log("highscore", highScore)
         checksPattern();
@@ -172,8 +172,8 @@ function animateButton(button) {
         buttonOne.classList.replace("red", "redLightUp");
     } else if (buttonClass === "yellow") {
         buttonTwo.classList.replace("yellow", "yellowLightUp", );
-    } else if (buttonClass === "orange") {
-        buttonThree.classList.replace("orange", "orangeLightUp");
+    } else if (buttonClass === "purple") {
+        buttonThree.classList.replace("purple", "purpleLightUp");
     } else if (buttonClass === "blue") {
         buttonFour.classList.replace("blue", "blueLightUp");
     } else {
@@ -184,8 +184,8 @@ function animateButton(button) {
             buttonOne.classList.replace("redLightUp", "red");
         } else if (buttonClass === "yellow") {
             buttonTwo.classList.replace("yellowLightUp", "yellow");
-        } else if (buttonClass === "orange") {
-            buttonThree.classList.replace("orangeLightUp", "orange");
+        } else if (buttonClass === "purple") {
+            buttonThree.classList.replace("purpleLightUp", "purple");
         } else if (buttonClass === "blue") {
             buttonFour.classList.replace("blueLightUp", "blue");
         } else {

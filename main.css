@@ -1,6 +1,9 @@
-body{
-  background-color: #1c1d21 !important;
+body {
+  background-color: black;
   padding-bottom: 70px;
+  padding-top: 70px;
+  font-family: 'Rammetto One', cursive;
+  color: #fff4e9;
 }
 
 .button {
@@ -9,9 +12,17 @@ body{
   width: 150px;
   transition-duration: 0.4s;
   text-decoration: none;
+  margin: 20px;
 }
 
-.button:focus {
+
+.startReset {
+  height: 150px;
+  width: 200px; 
+  padding-top: 5px;
+}
+
+.button:focus, .nav-item:focus {
   outline:none;
 }
 
@@ -19,8 +30,11 @@ body{
   background-color: #fff4e9;
   border-radius: 25%;
   font-size:  35px !important;
-  font-family: 'Rammetto One', cursive;
   color: black;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 15px;
 }
 
 .startButton:focus, .resetButton:focus {
@@ -28,82 +42,98 @@ body{
 }
 
 .red {
-  background-color: #f3a2b1;
+  background-color: #fd0002;
   border-color: #fdfffc;
 }
 
-.red:hover{
-  background-color: #e0002b;
+.red:hover {
+  background-color:#f86767;
   transform: scale(1.2);
 }
 
-.redLightUp{
-  background-color: #e0002b;
+.redLightUp {
+  background-color: #f86767;
   border-radius: 50%;
   transform: scale(1.2);
 }
 
 .yellow {
-  background-color: #faf9b5;
+  background-color: #fed700;
   border-color: #fdfffc;
 }
 
-.yellow:hover{
-  background-color: #ccc802;
+.yellow:hover {
+  background-color: #ffee8c;
   transform: scale(1.2);
 }
 
-.yellowLightUp{
-  background-color: #ccc802;
+.yellowLightUp {
+  background-color: #ffee8c;
   border-radius: 50%;
   transform: scale(1.2);
 }
 
-.orange {
-  background-color: #fcd5b1;
-  /* border-color: #fcd5b1; */
+.purple {
+  background-color: #a114a1;
 }
 
-.orange:hover{
-  background-color: #f97800;
+.purple:hover{
+  background-color: #f7a7f7;
   transform: scale(1.2); 
 }
 
-.orangeLightUp{
-  background-color: #f97800;
+.purpleLightUp{
+  background-color: #f7a7f7;
   border-radius: 50%;
   transform: scale(1.2);
 }
 
 .blue {
-  background-color: #a2d2e4;
+  background-color: #0000fe;
   border-color: #fdfffc;
 }
 .blue:hover{
-  background-color: #0085b5;
+  background-color: #5a5aff;
   transform: scale(1.2);
 }
 .blueLightUp{
-  background-color: #0085b5;
+  background-color: #5a5aff;
   border-radius: 50%;
   transform: scale(1.2);
 }
 .green {
-  background-color: #abffa2;
+  background-color: #008001;
   border-color: #fdfffc;
 }
 .green:hover{
-  background-color: #19ff00;
+  background-color: #7dfa7d;
   transform: scale(1.2);
 }
 .greenLightUp{
-  background-color: #19ff00;
+  background-color: #7dfa7d;
   border-radius: 50%;
   transform: scale(1.2);
 }
-.gameScore, .highScore, .message {
+.gameScore, .highScore, .message, {
   color: #fff4e9;
   font-size: 35px !important;
-  font-family: 'Rammetto One', cursive;
+}
+
+a {
+  outline: none;
+}
+
+.fab.fa-github {
+  color: white;
+  padding-top: 20px;
+  font-size: 30px;
+}
+
+.fab.fa-linkedin, .fab.fa-twitter {
+  color: white;
+}
+
+.row4 {
+  height: 40px;
 }
 
